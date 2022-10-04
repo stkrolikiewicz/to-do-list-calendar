@@ -1,0 +1,43 @@
+body {
+    background-color: #f5f5f5;
+    font-family: "Montserrat", sans-serif;
+}
+
+header {
+    background-color: #141b41;
+    color: #f9f9fd;
+    /* border: 1px solid #141b41;
+    border-radius: 3px;
+    padding: 10px; */
+    margin-bottom: 5px;
+}
+
+#mainHeader {
+    margin: 0;
+}
+
+#addTaskBtn {
+    background-color: #f25918;
+    border-radius: 40%;
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    margin-left: -21px;
+    /* border: 1px solid rgb(141, 133, 133); */
+    /* box-shadow: 1px 2px 20px rgb(59, 59, 59); */
+}
+#addTaskBtn:hover {
+    background-color: #e9581b;
+    box-shadow: 1px 2px 10px rgb(204, 201, 201);
+}
+#addTaskBtn:active {
+    background-color: #f1500b;
+    box-shadow: 1px 2px 20px rgb(141, 137, 137);
+}
+
+.task {
+    /* background-color: #f25918; */
+    margin-bottom: 5px;
+    /* border-radius: 5px; */
+    /* padding: 0px 10px 0px 10px; */
+}
