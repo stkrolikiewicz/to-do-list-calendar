@@ -22,25 +22,29 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400&display=swap"
             rel="stylesheet"
         />
     </head>
     <body>
-        <header>
+        <header id="navbar">
             <div class="container-fluid">
                 <div class="row text-center align-items-center">
-                    <div class="col-lg-6 col-12">
-                        <h2 id="mainHeader">to do list</h2>
+                    <div class="col-lg-6 col-12 h-100">
+                        <h2>to do list</h2>
                     </div>
-                    <div class="col-lg-6 col-12">
+                    <div class="col-lg-6 col-12 h-100">
                         <nav>
                             <div class="row text-center">
-                                <div class="col-6">
-                                    <a>to do list</a>
+                                <div class="col-6 h-100">
+                                    <div class="nav-item">
+                                        <a>to do list</a>
+                                    </div>
                                 </div>
-                                <div class="col-6">
-                                    <a>calendar</a>
+                                <div class="col-6 h-100">
+                                    <div class="nav-item">
+                                        <a>calendar</a>
+                                    </div>
                                 </div>
                             </div>
                         </nav>
@@ -49,7 +53,38 @@
             </div>
         </header>
         <main>
-            <div id="tasks-container" class="container-fluid text-center"></div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="aside-col">
+                            <div>
+                                <nav>
+                                    <ul>
+                                        <li>Today</li>
+                                        <li>This Week</li>
+                                        <li>Missed</li>
+                                        <li>
+                                            Projects:
+                                            <ul>
+                                                <li>School</li>
+                                                <li>Home</li>
+                                                <li>Sports team</li>
+                                                <li>Health</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8 tasks-col">
+                        <div
+                            id="tasks-container"
+                            class="container-fluid text-center"
+                        ></div>
+                    </div>
+                </div>
+            </div>
 
             <button id="addTaskBtn" class="btn" onclick="addTask()">
                 <svg
@@ -67,7 +102,17 @@
             </button>
         </main>
 
-        <footer></footer>
+        <footer>
+            <div class="container-fluid">
+                <div class="row text-center">
+                    <div class="col-12">
+                        <div class="align-items-center">
+                            <h6>Copyright SK 2022</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
         <script src="js/script.js"></script>
     </body>
