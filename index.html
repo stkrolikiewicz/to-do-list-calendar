@@ -22,17 +22,16 @@
     </head>
     <body>
         <header id="navbar">
-            <div>
-                <nav>
-                    <div class="nav-item">
-                        <a>to do list</a>
-                    </div>
-                    <div class="nav-item">
-                        <a>calendar</a>
-                    </div>
-                </nav>
-            </div>
+            <nav>
+                <div class="nav-item">
+                    <a>to do list</a>
+                </div>
+                <div class="nav-item">
+                    <a>calendar</a>
+                </div>
+            </nav>
         </header>
+
         <main>
             <section id="aside-nav">
                 <nav>
@@ -52,8 +51,34 @@
                     </ul>
                 </nav>
             </section>
+
             <section id="tasks-container">
-                <button id="addTaskBtn" onclick="addTask()">
+                <div class="task">
+                    <form>
+                        <label for="task-content">Type a name of task</label>
+                        <input
+                            type="text"
+                            name="task-content"
+                            id="task-content"
+                            class="task-input input-item"
+                        />
+                        <label for="task-date">Set a due date</label>
+                        <input
+                            type="date"
+                            name="task-date"
+                            id="task-date"
+                            class="task-input input-item"
+                        />
+                        <input
+                            type="button"
+                            value="cancel"
+                            onclick="removeTask(this)"
+                            class="removeTask"
+                        />
+                        <input type="submit" value="Add task" />
+                    </form>
+                </div>
+                <button id="addTaskBtn">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
@@ -72,17 +97,11 @@
         </main>
 
         <footer>
-            <div class="container-fluid">
-                <div class="row text-center">
-                    <div class="col-12">
-                        <div class="align-items-center">
-                            <h6>Copyright SK 2022</h6>
-                        </div>
-                    </div>
-                </div>
+            <div>
+                <h6>Copyright SK 2022</h6>
             </div>
         </footer>
 
-        <script src="js/script.js"></script>
+        <script type="module" src="js/script.js"></script>
     </body>
 </html>

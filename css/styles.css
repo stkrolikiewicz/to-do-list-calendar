@@ -37,35 +37,23 @@ main > * {
 }
 
 #tasks-container {
-    background-color: #141b41;
     width: 100%;
 }
 
 #addTaskBtn {
     background-color: #f25918;
-    /* border-radius: 40%; */
-    /* position: fixed; */
-    /* bottom: 5%; */
-    /* left: 50%; */
-    /* margin-left: -21px; */
-    /* border: 1px solid rgb(141, 133, 133); */
-    /* box-shadow: 1px 2px 20px rgb(59, 59, 59); */
+    border-style: none;
 }
 
 #addTaskBtn:hover {
     background-color: #e9581b;
-    box-shadow: 1px 2px 10px rgb(204, 201, 201);
-}
-#addTaskBtn:active {
-    background-color: #f1500b;
-    box-shadow: 1px 2px 20px rgb(141, 137, 137);
 }
 
 .task {
     background-color: #f25918;
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    /* width: 100%; */
     margin: 0 auto 0 auto;
 }
 
@@ -74,12 +62,13 @@ main > * {
 }
 
 .task-input {
-    /* border-radius: 0.5rem; */
-    background-color: #eeeeee;
-    border-style: none;
-    border-bottom: 1px solid #141b41;
 }
 
+.task-list > * {
+    padding: 0.2rem;
+    border: 1px solid black;
+    margin: 0.2rem;
+}
 .task-input:focus {
     border-style: none;
     background-color: #eeeeee;
@@ -87,10 +76,9 @@ main > * {
 
 .removeTask {
     color: #ff220c;
-    height: 100%;
-    width: 2rem;
+    padding: 0.2rem;
     border: 1px solid #ff220c;
-    border-radius: 0.5rem;
+    border-radius: 0.2rem;
 }
 
 footer {
