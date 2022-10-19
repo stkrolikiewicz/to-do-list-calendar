@@ -39,22 +39,11 @@ function addTask() {
                 id="task-date"
                 class="task-input input-item"
             />
-            <input
-                type="button"
-                value="cancel"
-                class="removeTask"
-            />
             <input type="submit" value="Add task" />
         </form>
     </div>
     `;
     document.getElementById("tasks-container").appendChild(newTask);
-}
-
-function removeTask(input) {
-    document
-        .getElementById("tasks-container")
-        .removeChild(input.parentNode.parentNode.parentNode);
 }
 
 document.getElementById("addTaskBtn").addEventListener("click", addTask);
