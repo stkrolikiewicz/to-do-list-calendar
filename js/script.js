@@ -1,49 +1,41 @@
 import tasksList from "./tasks.json" assert { type: "json" };
 
-(() => {
-    for (const task of tasksList) {
-        const newTask = document.createElement("form");
-        newTask.className = "task";
-        newTask.innerHTML = `
-        <div class="task task-list">
-            <input type="checkbox" />
-            <p class="value"> ${task.value}</p>
-            <p class="dueDate">due date: ${task.dueDate}</p>
-
-            <p class="project">project:  ${task.project}</p>
-            <p class="priority">priority: ${task.priority}</p>
-        </div>
-        `;
-        document.getElementById("tasks-container").appendChild(newTask);
-    }
-})();
-
-function addTask() {
-    alert("New taks added!");
+// (() => {
+//     )();
+for (const task of tasksList) {
     const newTask = document.createElement("form");
     newTask.className = "task";
     newTask.innerHTML = `
-    <div class="task">
-        <form>
-            <label for="task-content">Type a name of task</label>
-            <input
-                type="text"
-                name="task-content"
-                id="task-content"
-                class="task-input input-item"
-            />
-            <label for="task-date">Set a due date</label>
-            <input
-                type="date"
-                name="task-date"
-                id="task-date"
-                class="task-input input-item"
-            />
-            <input type="submit" value="Add task" />
-        </form>
+    <div class="task task-list">
+        <input type="checkbox" />
+        <p class="value"> ${task.value}</p>
+        <p class="dueDate">due date: ${task.dueDate}</p>
+
+        <p class="project">project:  ${task.project}</p>
+        <p class="priority">priority: ${task.priority}</p>
     </div>
     `;
-    document.getElementById("tasks-container").appendChild(newTask);
+    document.getElementById("tasks-list").appendChild(newTask);
 }
 
-document.getElementById("addTaskBtn").addEventListener("click", addTask);
+window.addTask = function () {
+    document.getElementById("task-form").style.display = "flex";
+    document.getElementById("addTaskBtn").style.display = "none";
+};
+
+window.setTask = function () {
+    let task = {
+        value: document.getElementById("task-content").value,
+        dueDate: document.getElementById("task-date").value,
+        project: document.getElementById("task-project").value,
+        priority: document.getElementById("task-priority").value,
+    };
+    // tasksList.push(task);
+    document.forms[2].reset();
+    localStorage.setItem("tasksList", JSON.stringify(tasksList));
+};
+
+window.removeTask = function (input) {
+    document.getElementById("addTaskBtn").style.display = "block";
+    document.getElementById("task-form").style.display = "none";
+};

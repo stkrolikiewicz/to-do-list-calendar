@@ -16,5 +16,8 @@
     "bugs": {
         "url": "https://github.com/stkrolikiewicz/to-do-list-calendar/issues"
     },
-    "homepage": "https://github.com/stkrolikiewicz/to-do-list-calendar#readme"
+    "homepage": "https://github.com/stkrolikiewicz/to-do-list-calendar#readme",
+    "dependencies": {
+        "fs": "0.0.1-security"
+    }
 }
