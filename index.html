@@ -52,7 +52,6 @@
             </section>
 
             <section id="tasks-container">
-                <div id="tasks-list"></div>
                 <!-- <form class="task">
                     <label for="task-content">Type a name of task</label>
                     <input
@@ -77,98 +76,91 @@
                     <input type="submit" value="Add task" />
                 </form> -->
 
-                <div id="setNewTask">
-                    <form id="task-form" class="task">
-                        <div class="inputs">
-                            <div class="input-1">
-                                <label for="task-content"
-                                    >Type a name of task:</label
-                                >
+                <div>
+                    <div id="tasks-list"></div>
+                    <div class="addNewTask">
+                        <div id="addTaskBtn" onclick="addTask()">
+                            <button>+</button>
+                            <p>Add new task</p>
+                        </div>
+                        <form id="task-form" class="task">
+                            <div class="inputs">
                                 <input
                                     type="text"
-                                    name="task-content"
-                                    id="task-content"
-                                    class="task-input input-item"
+                                    name="task-name"
+                                    id="task-name"
+                                    placeholder="Type a name of the task"
+                                    onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = 'Type a name of the task'"
                                 />
+                                <textarea
+                                    type="textarea"
+                                    name="task-description"
+                                    id="task-description"
+                                    onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = 'Type a desctription of the task'"
+                                    placeholder="Type a desctription of the task"
+                                    rows="2"
+                                    cols="3"
+                                    wrap="soft"
+                                ></textarea>
+                                <div class="other-fields">
+                                    <div class="date-project">
+                                        <input
+                                            type="date"
+                                            name="task-date"
+                                            id="task-date"
+                                        />
+                                        <select
+                                            name="projects"
+                                            id="task-project"
+                                        >
+                                            <option value="1">project 1</option>
+                                            <option value="2">project 2</option>
+                                            <option value="3">project 3</option>
+                                            <option value="4">project 4</option>
+                                            <option value="5">project 5</option>
+                                        </select>
+                                    </div>
+                                    <select
+                                        name="priority"
+                                        id="task-priority"
+                                        class="task-input input-item"
+                                    >
+                                        <option value="1">priority 1</option>
+                                        <option value="2">priority 2</option>
+                                        <option value="3">priority 3</option>
+                                        <option value="4">priority 4</option>
+                                        <option value="5">priority 5</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="input-2">
-                                <label for="task-date">Set a due date:</label>
-                                <input
-                                    type="date"
-                                    name="task-date"
-                                    id="task-date"
-                                    class="task-input input-item"
-                                />
-                            </div>
-                            <div class="input-3">
-                                <label for="task-project"
-                                    >Assign the task to a project:</label
-                                >
-                                <select
-                                    name="projects"
-                                    id="task-project"
-                                    class="task-input input-item"
-                                >
-                                    <option value="1">project 1</option>
-                                    <option value="1">project 2</option>
-                                    <option value="1">project 3</option>
-                                    <option value="1">project 4</option>
-                                    <option value="1">project 5</option>
-                                </select>
-                            </div>
-                            <div class="input-4">
-                                <label for="task-priority">Set priority:</label>
-                                <input
-                                    type="number"
-                                    name="task-priority"
-                                    id="task-priority"
-                                    class="task-input input-item"
-                                    value="1"
-                                    min="1"
-                                    max="5"
-                                />
-                            </div>
-                        </div>
-                        <div class="buttons">
-                            <input
-                                type="button"
-                                value="cancel"
-                                onclick="removeTask(this)"
-                                class="removeTask taskBtn"
-                            />
-                            <input
-                                type="button"
-                                class="setTask taskBtn"
-                                value="Set task"
-                                onclick="setTask()"
-                            />
-                        </div>
-                    </form>
-                </div>
 
-                <button id="addTaskBtn" onclick="addTask()">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="dark"
-                        class="bi bi-plus"
-                        viewBox="0 0 16 16"
-                    >
-                        <path
-                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
-                        />
-                    </svg>
-                    Add new task
-                </button>
+                            <div class="buttons">
+                                <input
+                                    type="button"
+                                    value="cancel"
+                                    onclick="removeTask(this)"
+                                    class="removeTask taskBtn"
+                                />
+                                <input
+                                    type="button"
+                                    class="setTask taskBtn"
+                                    value="Set task"
+                                    onclick="setTask()"
+                                />
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </section>
         </main>
 
-        <footer>
+        <!-- <footer>
             <div>
                 <h6>Copyright SK 2022</h6>
             </div>
-        </footer>
+        </footer> -->
 
         <script type="module" src="js/script.js"></script>
     </body>
