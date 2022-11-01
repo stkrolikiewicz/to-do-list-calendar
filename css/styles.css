@@ -8,6 +8,8 @@
     --main-grey: rgba(212, 201, 201, 0.9);
     --dark-grey: rgba(116, 112, 112, 0.9);
     --main-blue: #1f5777;
+    --dark-blue: #152d3b;
+    --light: #fdfffc;
 }
 
 body {
@@ -18,28 +20,63 @@ body {
 
 header {
     display: flex;
-    /* background-color: #011627; */
-    color: #fdfffc;
+    background-color: var(--dark-blue);
+    color: var(--light);
+    align-items: flex-end;
     font-family: "Exo 2", sans-serif;
     height: var(--top-bar-height);
+    /* border-bottom: 1px solid var(--dark-grey); */
 }
 
 header > nav {
-    background-color: var(--main-blue);
-    width: 100%;
-    display: inline-flex;
-    justify-content: center;
+    /* background-color: var(--main-blue); */
+    position: absolute;
+    left: 0.3rem;
+    right: 0.3rem;
+    display: flex;
     align-items: center;
 }
 
+header > nav > ul {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    gap: 0.6rem;
+}
+
 .nav-item {
-    background-color: #ff220c;
+    /* background-color: #e30cff; */
     display: inline-flex;
-    margin-top: 0.5rem;
+    border: 1px solid var(--dark-grey);
+    border-bottom-style: none;
+    border-radius: 5px 5px 0 0;
+    /* border-top-style: none; */
+    /* border-radius: 1rem; */
     font-size: 1.3rem;
-    padding: 0.3rem;
+    padding: 0.3rem 0.6rem;
     justify-content: center;
     align-items: center;
+    transition: 0.2s;
+}
+
+header li.active {
+    background-color: var(--light);
+    color: var(--dark-blue);
+    /* border-bottom: 2px solid var(--light); */
+}
+
+header li.not-active {
+    background-color: var(--dark-blue);
+    color: var(--light);
+    /* border-bottom: 2px solid var(--light); */
+}
+
+header li:hover {
+    transition: 0.2s;
+    background-color: var(--main-grey);
+    color: var(--dark-blue);
+    cursor: pointer;
+    /* border-bottom: 2px solid var(--light); */
 }
 
 /* ********************************************* Main section **************************************************** */
@@ -61,6 +98,49 @@ main > * {
     width: 18rem;
     overflow-y: hidden;
     height: calc(100vh - var(--top-bar-height));
+    transition: transform 500ms ease-in;
+}
+/* .isHidden {
+    transform: translateX(-18rem);
+    transition: transform 500ms ease-out;
+} */
+
+/* .navDisappear {
+    animation: nav-disappear 1s;
+    animation-fill-mode: forwards;
+    display: none;
+}
+
+.navAppear {
+    animation: nav-disappear 1s;
+    animation-direction: reverse;
+    animation-fill-mode: forwards;
+    display: block;
+}
+
+@media (max-width: 500px) {
+    #aside-nav {
+        display: none;
+    }
+}
+
+@keyframes nav-disappear {
+    0% {
+        width: 18rem;
+        color: black;
+    }
+
+    10% {
+        color: var(--main-grey);
+    }
+    100% {
+        width: 0;
+        color: var(--main-grey);
+    }
+} */
+
+#aside-nav > * {
+    margin: 1rem auto 0 3rem;
 }
 /* ========================================== TASKS container =================================================== */
 #tasks-container {
@@ -70,39 +150,72 @@ main > * {
     height: calc(100vh - var(--top-bar-height));
 }
 
+/* ========================================== CALENDAR container =================================================== */
+#calendar-container {
+    width: 100%;
+    /* position: relative; */
+    overflow-y: auto;
+    height: calc(100vh - var(--top-bar-height));
+    display: none;
+}
+
 /* ------------------------------------ existing tasks list ------------------------------------------------------*/
 
 #tasks-list {
     margin: 1rem 4rem;
-    border: 1px solid var(--dark-grey);
+}
+
+.task-list {
+    display: inline-flex;
+    align-items: center;
 }
 
 .task-list > * {
     padding: 0.2rem;
-    border: 1px solid black;
-    margin: 0.2rem;
+    margin: 0.5rem;
+}
+
+.dueDate {
+    border: 1px solid orange;
+    font-size: small;
+    font-weight: bold;
+    color: orange;
+}
+.value {
+    font-size: large;
+}
+.project {
+    color: cornflowerblue;
+    font-size: medium;
+    font-weight: bold;
+}
+.priority {
+    color: rgb(223, 9, 9);
+    font-size: small;
+    font-weight: bold;
+    border: 1px solid;
+    padding: 0 0.3rem;
+    border-radius: 1rem;
 }
 
 .task {
     /* background-color: #f25918; */
     display: flex;
     flex-wrap: wrap;
-    /* width: 100%; */
-    margin: 0 auto 0 auto;
+    width: 100%;
+    border-bottom: 1px solid var(--dark-grey);
 }
 
 /* ------------------------------------- Add new task button ---------------------------------------------------- */
 
 .addNewTask {
     background-color: white;
-    border-top: 1px solid black;
+    /* border-top: 1px solid black; */
     margin: 0 4rem;
 }
 
 #addTaskBtn {
-    margin: 1rem 1rem 0 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--main-grey);
+    margin-left: 0.25rem;
 }
 
 #addTaskBtn > * {
@@ -110,7 +223,7 @@ main > * {
 }
 
 #addTaskBtn > button {
-    margin-right: 0.3rem;
+    margin-right: 0.5rem;
     background-color: var(--main-grey);
     border: 0px;
     height: 1.5rem;
@@ -129,8 +242,8 @@ main > * {
 /* ---------------------------------------------- New Task Form ------------------------------------------------ */
 
 #task-form {
-    margin: 1rem 1rem 0 1rem;
-    display: flex;
+    display: none;
+    flex-wrap: wrap;
 }
 
 .inputs {
@@ -148,6 +261,7 @@ select {
     padding: 0 0.3rem;
     border-radius: 0.4rem;
     border: 1px solid var(--main-grey);
+    font-family: "Exo 2", sans-serif;
 }
 input:focus,
 select:focus,
@@ -174,6 +288,7 @@ textarea {
     width: 100%;
     resize: none;
 }
+
 .other-fields {
     display: flex;
     flex-wrap: wrap;

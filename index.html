@@ -7,7 +7,7 @@
             name="description"
             content="To do list app synchronized with the Google Calendar API"
         />
-        <meta name="author" content="Staniław Królikiewicz" />
+        <meta name="author" content="Stanisław Królikiewicz" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="css/styles.css" />
 
@@ -24,15 +24,29 @@
         <!-- <h1 onclick="sayhello()">Click</h1> -->
         <header id="navbar">
             <nav>
+                <button onclick="navDisappear()">navDisappear</button>
+                <button onclick="navAppear()">navAppear</button>
                 <ul>
-                    <li class="nav-item"><a>to do list</a></li>
-                    <li class="nav-item"><a>calendar</a></li>
+                    <li
+                        id="tasks-tab"
+                        class="nav-item active"
+                        onclick="toDoList()"
+                    >
+                        <a>to do list</a>
+                    </li>
+                    <li
+                        id="calendar-tab"
+                        class="nav-item not-active"
+                        onclick="calendar()"
+                    >
+                        <a>calendar</a>
+                    </li>
                 </ul>
             </nav>
         </header>
 
         <main>
-            <section id="aside-nav">
+            <section id="aside-nav" class="isHidden">
                 <nav>
                     <ul>
                         <li>Today</li>
@@ -50,7 +64,7 @@
                     </ul>
                 </nav>
             </section>
-
+            <section id="calendar-container"></section>
             <section id="tasks-container">
                 <!-- <form class="task">
                     <label for="task-content">Type a name of task</label>
@@ -83,7 +97,7 @@
                             <button>+</button>
                             <p>Add new task</p>
                         </div>
-                        <form id="task-form" class="task">
+                        <form id="task-form">
                             <div class="inputs">
                                 <input
                                     type="text"
@@ -135,7 +149,6 @@
                                     </select>
                                 </div>
                             </div>
-
                             <div class="buttons">
                                 <input
                                     type="button"

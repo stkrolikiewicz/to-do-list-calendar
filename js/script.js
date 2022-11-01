@@ -1,22 +1,21 @@
-// import tasksList from "./tasks.json" assert { type: "json" };
+import tasksList from "./tasks.json" assert { type: "json" };
 
-// // (() => {
-// //     )();
-// for (const task of tasksList) {
-//     const newTask = document.createElement("form");
-//     newTask.className = "task";
-//     newTask.innerHTML = `
-//     <div class="task task-list">
-//         <input type="checkbox" />
-//         <p class="value"> ${task.value}</p>
-//         <p class="dueDate">due date: ${task.dueDate}</p>
+// (() => {
+//     )();
+for (const task of tasksList) {
+    const newTask = document.createElement("form");
+    newTask.innerHTML = `
+    <div class="task task-list">
+        <input type="checkbox" />
+        <p class="value"> ${task.value}</p>
+        <p class="dueDate">${task.dueDate}</p>
 
-//         <p class="project">project:  ${task.project}</p>
-//         <p class="priority">priority: ${task.priority}</p>
-//     </div>
-//     `;
-//     document.getElementById("tasks-list").appendChild(newTask);
-// }
+        <p class="project">${task.project}</p>
+        <p class="priority">${task.priority}</p>
+    </div>
+    `;
+    document.getElementById("tasks-list").appendChild(newTask);
+}
 
 window.addTask = function () {
     document.getElementById("task-form").style.display = "flex";
@@ -39,3 +38,35 @@ window.removeTask = function (input) {
     document.getElementById("addTaskBtn").style.display = "block";
     document.getElementById("task-form").style.display = "none";
 };
+
+const tasksTab = document.getElementById("tasks-tab");
+const calendarTab = document.getElementById("calendar-tab");
+const asideNav = document.getElementById("aside-nav");
+const tasksContainer = document.getElementById("tasks-container");
+const calendarContainer = document.getElementById("calendar-container");
+
+window.toDoList = function () {
+    document.getElementById("tasks-container").style.display = "block";
+    document.getElementById("calendar-container").style.display = "none";
+    tasksTab.classList.remove("not-active");
+    tasksTab.classList.add("active");
+    calendarTab.classList.remove("active");
+    calendarTab.classList.add("not-active");
+};
+
+window.calendar = function () {
+    document.getElementById("tasks-container").style.display = "none";
+    document.getElementById("calendar-container").style.display = "block";
+    calendarTab.classList.remove("not-active");
+    calendarTab.classList.add("active");
+    tasksTab.classList.remove("active");
+    tasksTab.classList.add("not-active");
+};
+
+// window.navDisappear = function () {
+//     asideNav.classList.add("isHidden");
+// };
+
+// window.navAppear = function () {
+//     asideNav.classList.remove("isHidden");
+// };
