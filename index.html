@@ -24,8 +24,13 @@
         <!-- <h1 onclick="sayhello()">Click</h1> -->
         <header id="navbar">
             <nav>
-                <button onclick="navDisappear()">navDisappear</button>
-                <button onclick="navAppear()">navAppear</button>
+                <button id="sidebar__trigger" onclick="moveSideBar()">
+                    <div id="sidebar-icon">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </button>
                 <ul>
                     <li
                         id="tasks-tab"
@@ -46,7 +51,7 @@
         </header>
 
         <main>
-            <section id="aside-nav" class="isHidden">
+            <section id="sidebar" class="sidebar">
                 <nav>
                     <ul>
                         <li>Today</li>

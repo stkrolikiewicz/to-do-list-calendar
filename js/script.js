@@ -41,9 +41,10 @@ window.removeTask = function (input) {
 
 const tasksTab = document.getElementById("tasks-tab");
 const calendarTab = document.getElementById("calendar-tab");
-const asideNav = document.getElementById("aside-nav");
+const sideBar = document.getElementById("sidebar");
 const tasksContainer = document.getElementById("tasks-container");
 const calendarContainer = document.getElementById("calendar-container");
+const sideBar__trigger = document.getElementById("sidebar__trigger");
 
 window.toDoList = function () {
     document.getElementById("tasks-container").style.display = "block";
@@ -63,10 +64,12 @@ window.calendar = function () {
     tasksTab.classList.add("not-active");
 };
 
-// window.navDisappear = function () {
-//     asideNav.classList.add("isHidden");
-// };
-
-// window.navAppear = function () {
-//     asideNav.classList.remove("isHidden");
-// };
+window.moveSideBar = function () {
+    if (sideBar.classList.contains("isHidden")) {
+        // sideBar__trigger.innerText = "CLOSE";
+        sideBar.classList.remove("isHidden");
+    } else {
+        // sideBar__trigger.innerText = "OPEN";
+        sideBar.classList.add("isHidden");
+    }
+};
