@@ -19,6 +19,7 @@
             href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400&display=swap"
             rel="stylesheet"
         />
+        <script type="module" src="js/script.js"></script>
     </head>
     <body>
         <!-- <h1 onclick="sayhello()">Click</h1> -->
@@ -59,7 +60,7 @@
                         <li>Missed</li>
                         <li>
                             Projects:
-                            <ul>
+                            <ul class="projects-list">
                                 <li>School</li>
                                 <li>Home</li>
                                 <li>Sports team</li>
@@ -69,7 +70,31 @@
                     </ul>
                 </nav>
             </section>
-            <section id="calendar-container"></section>
+            <section id="calendar-container">
+                <!-- <button id="button">Get Text File</button> -->
+                <!-- <div id="text"></div> -->
+                <table>
+                    <tr>
+                        <th>Monday</th>
+                        <th>Thuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                        <th>Saturay</th>
+                        <th>Sunday</th>
+                    </tr>
+                    <tr>
+                        <td>Alfreds Futterkiste</td>
+                        <td>Maria Anders</td>
+                        <td>Germany</td>
+                    </tr>
+                    <tr>
+                        <td>Centro comercial Moctezuma</td>
+                        <td>Francisco Chang</td>
+                        <td>Mexico</td>
+                    </tr>
+                </table>
+            </section>
             <section id="tasks-container">
                 <!-- <form class="task">
                     <label for="task-content">Type a name of task</label>
@@ -162,10 +187,9 @@
                                     class="removeTask taskBtn"
                                 />
                                 <input
-                                    type="button"
+                                    type="submit"
                                     class="setTask taskBtn"
                                     value="Set task"
-                                    onclick="setTask()"
                                 />
                             </div>
                         </form>
@@ -179,7 +203,5 @@
                 <h6>Copyright SK 2022</h6>
             </div>
         </footer> -->
-
-        <script type="module" src="js/script.js"></script>
     </body>
 </html>
