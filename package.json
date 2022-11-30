@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "mongodb": "^4.12.1",
-    "mongoose": "^6.7.4"
+    "mongoose": "^6.7.4",
+    "next-superjson": "^0.0.4",
+    "superjson": "^1.11.0"
   }
 }

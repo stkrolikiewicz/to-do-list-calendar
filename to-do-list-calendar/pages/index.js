@@ -1,65 +1,64 @@
-import Link from 'next/link'
-import dbConnect from '../lib/dbConnect'
-import Pet from '../models/Pet'
+import Link from "next/link";
+import dbConnect from "../lib/dbConnect";
+import Task from "../models/Task";
 
-const Index = ({ pets }) => (
-  <>
-    {/* Create a card for each pet */}
-    {pets.map((pet) => (
-      <div key={pet._id}>
-        <div className="card">
-          <img src={pet.image_url} />
-          <h5 className="pet-name">{pet.name}</h5>
-          <div className="main-content">
-            <p className="pet-name">{pet.name}</p>
-            <p className="owner">Owner: {pet.owner_name}</p>
+const Index = ({ tasks }) => (
+    <>
+        {/* Create a card for each task */}
+        {tasks.map((task) => (
+            <div key={task._id}>
+                <div className="card">
+                    <h5 className="task-name">{task.name}</h5>
+                    <div className="main-content">
+                        <p className="task-name">{task.name}</p>
+                        <p className="task-date">{task.date}</p>
 
-            {/* Extra Pet Info: Likes and Dislikes */}
-            <div className="likes info">
-              <p className="label">Likes</p>
-              <ul>
-                {pet.likes.map((data, index) => (
-                  <li key={index}>{data} </li>
-                ))}
-              </ul>
+                        {/* Extra Task Info: Description, date, project and priority */}
+                        <div className="likes info">
+                            <p className="label">{task.priority}</p>
+                        </div>
+                        <div className="dislikes info">
+                            <p className="label">{task.project}</p>
+                        </div>
+
+                        <div className="btn-container">
+                            <Link
+                                href="/[id]/edit"
+                                as={`/${task._id}/edit`}
+                                legacyBehavior
+                            >
+                                <button className="btn edit">Edit</button>
+                            </Link>
+                            <Link
+                                href="/[id]"
+                                as={`/${task._id}`}
+                                legacyBehavior
+                            >
+                                <button className="btn view">View</button>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="dislikes info">
-              <p className="label">Dislikes</p>
-              <ul>
-                {pet.dislikes.map((data, index) => (
-                  <li key={index}>{data} </li>
-                ))}
-              </ul>
-            </div>
+        ))}
+    </>
+);
 
-            <div className="btn-container">
-              <Link href="/[id]/edit" as={`/${pet._id}/edit`} legacyBehavior>
-                <button className="btn edit">Edit</button>
-              </Link>
-              <Link href="/[id]" as={`/${pet._id}`} legacyBehavior>
-                <button className="btn view">View</button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    ))}
-  </>
-)
-
-/* Retrieves pet(s) data from mongodb database */
+/* Retrieves task(s) data from mongodb database */
 export async function getServerSideProps() {
-  await dbConnect()
+    await dbConnect();
 
-  /* find all the data in our database */
-  const result = await Pet.find({})
-  const pets = result.map((doc) => {
-    const pet = doc.toObject()
-    pet._id = pet._id.toString()
-    return pet
-  })
+    /* find all the data in our database */
+    const result = await Task.find({});
+    const tasks = result.map((doc) => {
+        const task = doc.toObject();
+        task._id = task._id.toString();
+        task.date = `${task.date}`;
 
-  return { props: { pets: pets } }
+        return task;
+    });
+
+    return { props: { tasks: tasks } };
 }
 
-export default Index
+export default Index;
