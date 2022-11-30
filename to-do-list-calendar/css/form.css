@@ -1,39 +1,102 @@
-form {
-  width: 90%;
-  margin: auto;
-  max-width: 550px;
-}
-input,
-form button,
-label {
-  display: block;
-}
-form button,
-input,
-textarea {
-  outline: none;
-}
-input,
-textarea {
-  border: 1px solid rgb(199, 199, 199);
-  border-radius: 10px;
-  padding: 10px;
-  font-size: 90%;
-  width: 100%;
-  height: 30px;
-  color: rgb(53, 53, 53);
-}
-textarea {
-  height: 50px;
-}
-label {
-  margin-top: 10px;
-}
-form button {
-  --accent: rgb(0, 162, 255);
-  margin-top: 20px;
+#task-form {
+    display: none;
+    flex-wrap: wrap;
 }
 
-.form-container {
-  width: 90%;
+.inputs {
+    border: 1px solid var(--dark-grey);
+    border-radius: 0.7rem;
+    padding: 0.7rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs input,
+select {
+    height: 1.5rem;
+    padding: 0 0.3rem;
+    border-radius: 0.4rem;
+    border: 1px solid var(--main-grey);
+    font-family: "Exo 2", sans-serif;
+}
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+input[type="text"] {
+    width: 100%;
+    font-size: 1.1rem;
+    font-family: "Exo 2", sans-serif;
+    font-weight: bold;
+    flex-wrap: wrap;
+    margin-bottom: 0.2rem;
+    border: 0px;
+}
+
+textarea {
+    font-size: 0.9rem;
+    font-family: "Exo 2", sans-serif;
+    padding: 0 0.3rem;
+    margin-bottom: 0.2rem;
+    border: 0px;
+    width: 100%;
+    resize: none;
+}
+
+.other-fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.date-project {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin: 0.5rem 0;
+    gap: 0.5rem;
+}
+
+.taskBtn {
+    background: white;
+    padding: 0.2rem;
+    border: 1px solid;
+    border-radius: 0.6rem;
+    padding: 0.5rem 0.7rem;
+    font-family: "Exo 2", sans-serif;
+    transition: 0.2s;
+}
+
+.removeTask {
+    color: #ff220c;
+}
+
+.setTask {
+    color: var(--dark-grey);
+}
+
+.removeTask:hover {
+    background-color: #ff220c;
+    color: white;
+    border-color: #ff220c;
+    transition: 0.2s;
+}
+
+.setTask:hover {
+    background-color: var(--dark-grey);
+    color: white;
+    border-color: var(--dark-grey);
+    transition: 0.2s;
 }

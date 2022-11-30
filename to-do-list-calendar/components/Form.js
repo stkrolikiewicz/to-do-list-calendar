@@ -104,10 +104,10 @@ const Form = ({ formId, taskForm, forNewTask = true }) => {
                         name="name"
                         value={form.name}
                         onChange={handleChange}
-                        // id="task-name"
-                        // placeholder="Type a name of the task"
-                        // onfocus="this.placeholder = ''"
-                        // onblur="this.placeholder = 'Type a name of the task'"
+                        id="task-name"
+                        placeholder="Type a name of the task"
+                        onfocus="this.placeholder = ''"
+                        onblur="this.placeholder = 'Type a name of the task'"
                         required
                     />
                     <textarea
@@ -115,13 +115,13 @@ const Form = ({ formId, taskForm, forNewTask = true }) => {
                         name="description"
                         value={form.description}
                         onChange={handleChange}
-                        // id="task-description"
-                        // onfocus="this.placeholder = ''"
-                        // onblur="this.placeholder = 'Type a desctription of the task'"
-                        // placeholder="Type a desctription of the task"
-                        // rows="2"
-                        // cols="3"
-                        // wrap="soft"
+                        id="task-description"
+                        onfocus="this.placeholder = ''"
+                        onblur="this.placeholder = 'Type a desctription of the task'"
+                        placeholder="Type a desctription of the task"
+                        rows="2"
+                        cols="3"
+                        wrap="soft"
                     ></textarea>
                     <div className="other-fields">
                         <div className="date-project">
@@ -130,13 +130,13 @@ const Form = ({ formId, taskForm, forNewTask = true }) => {
                                 name="date"
                                 value={form.date}
                                 onChange={handleChange}
-                                // id="task-date"
+                                id="task-date"
                             />
                             <select
                                 name="project"
                                 value={form.project}
                                 onChange={handleChange}
-                                // id="task-project"
+                                id="task-project"
                             >
                                 <option value="1">project 1</option>
                                 <option value="2">project 2</option>
@@ -149,8 +149,8 @@ const Form = ({ formId, taskForm, forNewTask = true }) => {
                             name="priority"
                             value={form.priority}
                             onChange={handleChange}
-                            // id="task-priority"
-                            // className="task-input input-item"
+                            id="task-priority"
+                            className="task-input input-item"
                         >
                             <option value={1}>priority 1</option>
                             <option value={2}>priority 2</option>
@@ -167,11 +167,7 @@ const Form = ({ formId, taskForm, forNewTask = true }) => {
                         onClick="removeTask(this)"
                         className="removeTask taskBtn"
                     /> */}
-                    <button
-                        type="submit"
-                        // className="setTask taskBtn"
-                        // value="Set "
-                    >
+                    <button type="submit" className="setTask taskBtn">
                         Submit
                     </button>
                 </div>

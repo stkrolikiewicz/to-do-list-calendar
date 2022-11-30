@@ -3,6 +3,7 @@
     "mongodb": "^4.12.1",
     "mongoose": "^6.7.4",
     "next-superjson": "^0.0.4",
+    "react-router-dom": "^6.4.3",
     "superjson": "^1.11.0"
   }
 }
