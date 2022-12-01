@@ -4,21 +4,36 @@
 }
 
 .inputs {
-    border: 1px solid var(--dark-grey);
-    border-radius: 0.7rem;
-    padding: 0.7rem;
-    width: 100%;
+    /* border: 1px solid var(--dark-grey); */
+    /* background-color:  */
+    /* background: linear-gradient(#7474ec38, #ffffff); */
+    background: linear-gradient(
+        rgba(173, 173, 173, 0.4),
+        rgba(255, 255, 255, 0.8)
+    );
+    border-radius: 2rem 2rem 0 0;
+    color: black;
+    padding: 1.5rem;
+    margin: 1rem 5%;
+    width: auto;
     display: flex;
     flex-direction: column;
 }
+/* .inputs > * {
+    background: transparent;
+}
+select {
+    
+} */
 
 .inputs input,
 select {
     height: 1.5rem;
     padding: 0 0.3rem;
     border-radius: 0.4rem;
-    border: 1px solid var(--main-grey);
+    border: 1px solid;
     font-family: "Exo 2", sans-serif;
+    background: transparent;
 }
 input:focus,
 select:focus,
@@ -44,6 +59,7 @@ textarea {
     border: 0px;
     width: 100%;
     resize: none;
+    background: transparent;
 }
 
 .other-fields {
@@ -64,7 +80,7 @@ textarea {
 .buttons {
     display: flex;
     width: 100%;
-    justify-content: flex-end;
+    justify-content: center;
     margin: 0.5rem 0;
     gap: 0.5rem;
 }
@@ -84,7 +100,8 @@ textarea {
 }
 
 .setTask {
-    color: var(--dark-grey);
+    color: rgb(3, 12, 29);
+    /* margin-right: 3rem; */
 }
 
 .removeTask:hover {
@@ -95,8 +112,8 @@ textarea {
 }
 
 .setTask:hover {
-    background-color: var(--dark-grey);
+    background-color: rgb(3, 12, 29);
     color: white;
-    border-color: var(--dark-grey);
+    border-color: rgb(3, 12, 29);
     transition: 0.2s;
 }

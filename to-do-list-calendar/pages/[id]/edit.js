@@ -27,7 +27,12 @@ const EditTask = () => {
     };
 
     return (
-        <Form formId="edit-task-form" taskForm={taskForm} forNewTask={false} />
+        <Form
+            formId="edit-task-form"
+            taskForm={taskForm}
+            forNewTask={false}
+            tab="edit"
+        />
     );
 };
 

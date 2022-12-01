@@ -20,35 +20,30 @@ const TaskPage = ({ task }) => {
             setMessage("Failed to delete the task.");
         }
     };
-
     return (
-        <div key={task._id}>
-            <div className="card">
-                <h5 className="task-name">{task.name}</h5>
-                <div className="main-content">
-                    <p className="task-name">{task.name}</p>
-                    {/* Extra Task Info: Likes and Dislikes */}
-                    <div className="likes info">
-                        <p className="label">{task.project}</p>
-                    </div>
-                    <div className="dislikes info">
-                        <p className="label">{task.priority}</p>
-                    </div>
-
-                    <div className="btn-container">
-                        <Link
-                            href="/[id]/edit"
-                            as={`/${task._id}/edit`}
-                            legacyBehavior
-                        >
-                            <button className="btn edit">Edit</button>
-                        </Link>
-                        <button className="btn delete" onClick={handleDelete}>
-                            Delete
-                        </button>
-                    </div>
+        <div key={task._id} id="task">
+            <div className="data">
+                <div className="">
+                    <p class="name"> {task.name}</p>
+                    <p class="dueDate">{task.dueDate}</p>
+                    <p class="project">{task.project}</p>
+                    <p class="priority">{task.priority}</p>
+                    <p class="description">{task.description}</p>
+                </div>
+                <div className="btns">
+                    <Link
+                        href="/[id]/edit"
+                        as={`/${task._id}/edit`}
+                        legacyBehavior
+                    >
+                        <button className="btn edit">Edit</button>
+                    </Link>
+                    <button className="btn delete" onClick={handleDelete}>
+                        Delete
+                    </button>
                 </div>
             </div>
+            {/* <div className="card"></div> */}
             {message && <p>{message}</p>}
         </div>
     );

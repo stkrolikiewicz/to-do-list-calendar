@@ -1,0 +1,153 @@
+#task {
+    margin: 0.3rem 5%;
+    /* background: rgb(186, 212, 221); */
+    /* background: linear-gradient(0.25turn, #ffffff, #6363db60, #ffffff); */
+    padding: 0.5rem;
+    /* width: auto; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--main-grey);
+    /* border-radius: 2rem; */
+}
+
+.data {
+    /* background-color: blueviolet; */
+    /* flex: 1 1 auto; */
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    /* flex-wrap: nowrap; */
+}
+
+.data > * {
+    /* padding: 0.2rem; */
+    /* margin: 0.5rem; */
+    /* flex: 1 0 auto; */
+}
+
+.check-name {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.checkbox {
+    height: 17px;
+    width: 17px;
+    background: transparent;
+    border: 1px solid var(--dark-grey);
+    border-radius: 8.5px;
+    margin-right: 0.5rem;
+}
+
+.name {
+    font-size: medium;
+    /* flex-wrap: nowrap; */
+    flex: 1 0 auto;
+}
+
+.dueDate {
+    /* border: 1px solid orange; */
+    font-size: small;
+    /* font-weight: bold; */
+    color: orange;
+}
+
+.project {
+    color: cornflowerblue;
+    font-size: small;
+    /* font-weight: bold; */
+}
+
+.priority {
+    color: rgb(223, 9, 9);
+    font-size: small;
+    /* font-weight: bold; */
+    /* border: 1px solid; */
+    /* padding: 0 0.3rem; */
+    /* border-radius: 1rem; */
+}
+
+.flags {
+    display: inline-flex;
+    align-items: center;
+}
+.flags > * {
+    /* padding: 0.2rem;
+    margin: 0.5rem; */
+    /* flex: 1 0 auto; */
+    /* gap */
+}
+
+.btns {
+    display: inline-flex;
+    gap: 1rem;
+}
+
+.btn {
+    --accent: grey;
+    cursor: pointer;
+    background: transparent;
+    border: 1.5px solid var(--accent);
+    color: var(--accent);
+    border-radius: 10px;
+    padding: 5px 8px;
+    font-size: 90%;
+    letter-spacing: 1px;
+    transition: 0.5s all;
+    outline: none;
+}
+
+.btn:hover {
+    background: var(--accent);
+    color: white;
+}
+
+.edit.btn {
+    --accent: green;
+}
+
+.delete.btn {
+    --accent: red;
+}
+
+.view.btn {
+    --accent: blue;
+}
+/* 
+input[type="checkbox"] {
+    appearance: none;
+    background-color: transparent;
+    margin: 0;
+    font: inherit;
+    color: var(--dark-grey);
+    width: 1.15em;
+    height: 1.15em;
+    border: 1.5px solid var(--dark-grey);
+    border-radius: 1em;
+    transform: translateY(-0.075em);
+}
+
+input[type="checkbox"]::before {
+    appearance: none;
+    background-color: transparent;
+    margin: 0;
+    font: inherit;
+    color: var(--dark-grey);
+    width: 1.15em;
+    height: 1.15em;
+    border: 1.5px solid var(--dark-grey);
+    border-radius: 1em;
+    transform: translateY(-0.075em);
+}
+input[type="checkbox"]:hover {
+    cursor: pointer;
+}
+input[type="checkbox"]:focus {
+    transform-origin: bottom left;
+    background-color: var(--dark-grey);
+    color: var(--dark-grey);
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+} 
+*/

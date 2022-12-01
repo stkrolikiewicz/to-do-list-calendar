@@ -1,10 +1,12 @@
 import "../css/style.css";
 import "../css/form.css";
 import "../css/header.css";
+import "../css/newTask.css";
+import "../css/taskList.css";
 import Head from "next/head";
 import Link from "next/link";
 import Header from "../components/Header";
-import NewTask from "./new";
+import NewTask from "../components/NewTask";
 
 function MyApp({ Component, pageProps }) {
     return (
@@ -24,15 +26,7 @@ function MyApp({ Component, pageProps }) {
                 />
             </Head>
             <Header />
-            <div className="top-bar">
-                <div className="nav">
-                    <Link href="/">Home</Link>
-                    <Link href="/new">Add Task</Link>
-                </div>
-            </div>
-            <div className="grid wrapper">
-                <Component {...pageProps} />
-            </div>
+            <Component {...pageProps} />
         </>
     );
 }

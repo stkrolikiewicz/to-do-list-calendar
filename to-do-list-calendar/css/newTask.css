@@ -1,0 +1,25 @@
+#addTaskBtn {
+    margin: 1rem 5%;
+}
+
+#addTaskBtn > * {
+    display: inline;
+}
+
+#addTaskBtn > button {
+    margin-right: 0.5rem;
+    background-color: var(--dark-grey);
+    color: #eeeeee;
+    border: 0px;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 0.5rem;
+    transition: 0.5s;
+}
+
+#addTaskBtn > button:hover {
+    background-color: rgb(3, 12, 29);
+
+    transition: 0.5s;
+    transform: rotate(180deg);
+}

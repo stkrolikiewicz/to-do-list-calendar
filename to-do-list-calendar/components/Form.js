@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { mutate } from "swr";
 
-const Form = ({ formId, taskForm, forNewTask = true }) => {
+const Form = ({ formId, taskForm, forNewTask = true, tab }) => {
     const router = useRouter();
     const contentType = "application/json";
     const [errors, setErrors] = useState({});
@@ -85,10 +85,23 @@ const Form = ({ formId, taskForm, forNewTask = true }) => {
         return err;
     };
 
+    const [formDisplay, setFormDisplay] =
+        tab === "main" ? useState("none") : useState("block");
+    const [plusBtnDisplay, setPlusBtnDisplay] =
+        tab === "main" ? useState("block") : useState("none");
+    const addTask = () => {
+        formDisplay === "block"
+            ? setFormDisplay("none")
+            : setFormDisplay("block");
+        setPlusBtnDisplay("none");
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const errs = formValidate();
         if (Object.keys(errs).length === 0) {
+            setFormDisplay("none");
+            tab === "main" && setPlusBtnDisplay("block");
             forNewTask ? postData(form) : putData(form);
         } else {
             setErrors({ errs });
@@ -97,7 +110,19 @@ const Form = ({ formId, taskForm, forNewTask = true }) => {
 
     return (
         <>
-            <form id={formId} onSubmit={handleSubmit}>
+            <div
+                id="addTaskBtn"
+                onClick={addTask}
+                style={{ display: `${plusBtnDisplay}` }}
+            >
+                <button>+</button>
+                <p>Add new task</p>
+            </div>
+            <form
+                id={formId}
+                onSubmit={handleSubmit}
+                style={{ display: `${formDisplay}` }}
+            >
                 <div className="inputs">
                     <input
                         type="text"
