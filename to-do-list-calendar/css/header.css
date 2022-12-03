@@ -2,19 +2,25 @@ header {
     position: sticky;
     top: 0.3rem;
     display: flex;
-    /* background-color: var(--dark-blue); */
-    background: linear-gradient(
+    background-color: var(--dark-blue);
+    /* background: linear-gradient(
         45deg,
         rgba(23, 23, 26, 0.9),
         rgba(75, 75, 83, 0.8)
-    );
+    ); */
+    /* background: linear-gradient(
+        60deg,
+        rgba(0, 110, 255, 0.9),
+        rgba(16, 117, 156, 0.4),
+        rgba(0, 99, 138, 0.8)
+    ); */
     color: var(--light);
     align-items: center;
     font-family: "Exo 2", sans-serif;
     height: var(--top-bar-height);
     z-index: 100;
     margin: 0.3rem;
-    border-radius: 2rem;
+    border-radius: 1.2rem;
     /* border-bottom: 1px solid var(--dark-grey); */
 }
 
@@ -54,7 +60,7 @@ header > nav > ul {
 }
 
 header li.active {
-    background: rgb(3, 12, 29);
+    background: var(--main-blue);
     /* background-color: var(--light);
     color: var(--dark-blue); */
     /* border: 1px solid var(--light); */
@@ -75,7 +81,7 @@ header li:hover {
     transition: 0.2s;
     /* background-color: var(--main-grey);
     color: var(--dark-blue); */
-    background: rgb(3, 12, 29);
+    background: var(--main-blue);
     /* border: 1px solid var(--light); */
     /* border-bottom: 0px; */
     /* color: var(--dark-blue); */
@@ -101,7 +107,7 @@ header li:hover {
 header button {
     /* background: var(--dark-blue); */
     background: transparent;
-    color: var(--light);
+    color: var(--main-blue);
     border: 0px solid;
     /* border-radius: 1rem; */
     /* border-radius: 2px; */
@@ -109,7 +115,7 @@ header button {
     margin-left: 1rem;
 }
 header button:hover {
-    background: rgb(22, 22, 22);
+    background: var(--main-blue);
     color: var(--light);
     border: 0px solid;
     border-radius: 0.2rem;

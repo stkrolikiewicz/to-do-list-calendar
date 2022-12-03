@@ -7,24 +7,40 @@
     /* border: 1px solid var(--dark-grey); */
     /* background-color:  */
     /* background: linear-gradient(#7474ec38, #ffffff); */
-    background: linear-gradient(
+
+    /* background: linear-gradient(
         rgba(173, 173, 173, 0.4),
         rgba(255, 255, 255, 0.8)
-    );
-    border-radius: 2rem 2rem 0 0;
+    ); */
+    background: linear-gradient(var(--dark-blue), rgba(255, 255, 255, 0.8));
+    border-radius: 1rem;
     color: black;
     padding: 1.5rem;
     margin: 1rem 5%;
     width: auto;
     display: flex;
     flex-direction: column;
+    border-width: 5px;
+    background: var(--gradient);
+
+    border: 0;
+    position: relative;
+    z-index: 5;
 }
-/* .inputs > * {
-    background: transparent;
+
+input::before {
+    content: "";
+
+    display: block;
+    width: calc(100% - 5px * 2);
+    height: calc(100% - 5px * 2);
+    background: white;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: -1;
+    border-radius: 0.7rem;
 }
-select {
-    
-} */
 
 .inputs input,
 select {
@@ -85,7 +101,7 @@ textarea {
     gap: 0.5rem;
 }
 
-.taskBtn {
+/* .taskBtn {
     background: white;
     padding: 0.2rem;
     border: 1px solid;
@@ -93,14 +109,14 @@ textarea {
     padding: 0.5rem 0.7rem;
     font-family: "Exo 2", sans-serif;
     transition: 0.2s;
-}
+} */
 
 .removeTask {
-    color: #ff220c;
+    --accent: #ff220c;
 }
 
 .setTask {
-    color: rgb(3, 12, 29);
+    --accent: rgb(3, 12, 29);
     /* margin-right: 3rem; */
 }
 

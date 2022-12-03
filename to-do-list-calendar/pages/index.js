@@ -9,33 +9,41 @@ import NewTask from "../components/NewTask";
 const Index = ({ tasks }) => (
     <>
         {/* Create a card for each task */}
-
-        {tasks.map((task) => (
-            <div key={task._id} id="task">
-                <div className="data">
-                    <div className="check-name">
-                        <input type="checkbox" />
-                        <p class="name"> {task.name}</p>
-                        <p class="dueDate">{task.dueDate}</p>
-                        <p class="project">{task.project}</p>
-                        <p class="priority">{task.priority}</p>
+        <section id="tasks-container">
+            <div id="tasks-list">
+                {tasks.map((task) => (
+                    <div key={task._id} id="task">
+                        <div className="data">
+                            <div className="check-name">
+                                <input type="checkbox" />
+                                <p class="name"> {task.name}</p>
+                                <p class="dueDate">{task.dueDate}</p>
+                                <p class="project">{task.project}</p>
+                                <p class="priority">{task.priority}</p>
+                            </div>
+                        </div>
+                        <div className="btns">
+                            <Link
+                                href="/[id]/edit"
+                                as={`/${task._id}/edit`}
+                                legacyBehavior
+                            >
+                                <button className="btn edit">Edit</button>
+                            </Link>
+                            <Link
+                                href="/[id]"
+                                as={`/${task._id}`}
+                                legacyBehavior
+                            >
+                                <button className="btn view">View</button>
+                            </Link>
+                        </div>
                     </div>
-                </div>
-                <div className="btns">
-                    <Link
-                        href="/[id]/edit"
-                        as={`/${task._id}/edit`}
-                        legacyBehavior
-                    >
-                        <button className="btn edit">Edit</button>
-                    </Link>
-                    <Link href="/[id]" as={`/${task._id}`} legacyBehavior>
-                        <button className="btn view">View</button>
-                    </Link>
-                </div>
+                ))}
             </div>
-        ))}
-        <NewTask />
+
+            <NewTask />
+        </section>
     </>
 );
 

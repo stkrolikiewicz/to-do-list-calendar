@@ -3,10 +3,10 @@ import "../css/form.css";
 import "../css/header.css";
 import "../css/newTask.css";
 import "../css/taskList.css";
+import "../css/sidebar.css";
 import Head from "next/head";
-import Link from "next/link";
 import Header from "../components/Header";
-import NewTask from "../components/NewTask";
+import Sidebar from "../components/Sidebar";
 
 function MyApp({ Component, pageProps }) {
     return (
@@ -26,7 +26,10 @@ function MyApp({ Component, pageProps }) {
                 />
             </Head>
             <Header />
-            <Component {...pageProps} />
+            <main>
+                <Sidebar />
+                <Component {...pageProps} />
+            </main>
         </>
     );
 }

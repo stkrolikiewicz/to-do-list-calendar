@@ -107,16 +107,19 @@ const Form = ({ formId, taskForm, forNewTask = true, tab }) => {
             setErrors({ errs });
         }
     };
+    const handleCancel = () => {
+        setFormDisplay("none");
+        tab === "main" && setPlusBtnDisplay("block");
+    };
 
     return (
-        <>
+        <div id="addNewTask">
             <div
                 id="addTaskBtn"
                 onClick={addTask}
                 style={{ display: `${plusBtnDisplay}` }}
             >
-                <button>+</button>
-                <p>Add new task</p>
+                <p>+ Add new task</p>
             </div>
             <form
                 id={formId}
@@ -192,7 +195,10 @@ const Form = ({ formId, taskForm, forNewTask = true, tab }) => {
                         onClick="removeTask(this)"
                         className="removeTask taskBtn"
                     /> */}
-                    <button type="submit" className="setTask taskBtn">
+                    <button className="removeTask btn" onClick={handleCancel}>
+                        Cancel
+                    </button>
+                    <button type="submit" className="setTask btn">
                         Submit
                     </button>
                 </div>
@@ -203,7 +209,7 @@ const Form = ({ formId, taskForm, forNewTask = true, tab }) => {
                     <li key={index}>{err}</li>
                 ))}
             </div>
-        </>
+        </div>
     );
 };
 

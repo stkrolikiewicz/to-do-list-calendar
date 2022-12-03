@@ -20,30 +20,31 @@ const TaskPage = ({ task }) => {
             setMessage("Failed to delete the task.");
         }
     };
+    const handleCheck = async () => {};
     return (
-        <div key={task._id} id="task">
-            <div className="data">
-                <div className="">
+        <div key={task._id} id="task-view">
+            <div className="data-view">
+                <div className="check-name-view">
                     <p class="name"> {task.name}</p>
-                    <p class="dueDate">{task.dueDate}</p>
-                    <p class="project">{task.project}</p>
-                    <p class="priority">{task.priority}</p>
                     <p class="description">{task.description}</p>
-                </div>
-                <div className="btns">
-                    <Link
-                        href="/[id]/edit"
-                        as={`/${task._id}/edit`}
-                        legacyBehavior
-                    >
-                        <button className="btn edit">Edit</button>
-                    </Link>
-                    <button className="btn delete" onClick={handleDelete}>
-                        Delete
-                    </button>
+                    <div className="flags-view">
+                        <p class="dueDate">Date: {task.dueDate}</p>
+                        <p class="project">Project {task.project}</p>
+                        <p class="priority">priority: {task.priority}</p>
+                    </div>
                 </div>
             </div>
-            {/* <div className="card"></div> */}
+            <div className="btns">
+                <Link href="/[id]/edit" as={`/${task._id}/edit`} legacyBehavior>
+                    <button className="btn edit">Edit</button>
+                </Link>
+                <button className="btn delete" onClick={handleDelete}>
+                    Delete
+                </button>
+                <button className="btn check" onClick={handleCheck}>
+                    Check Task
+                </button>
+            </div>
             {message && <p>{message}</p>}
         </div>
     );

@@ -1,25 +1,27 @@
 #addTaskBtn {
-    margin: 1rem 5%;
+    margin: 1.5rem 5%;
+    /* display: inline-flex; */
 }
 
 #addTaskBtn > * {
     display: inline;
 }
 
-#addTaskBtn > button {
+#addTaskBtn > p {
     margin-right: 0.5rem;
-    background-color: var(--dark-grey);
-    color: #eeeeee;
-    border: 0px;
-    height: 1.5rem;
-    width: 1.5rem;
+    background: transparent;
+    font-size: 1.2rem;
+    /* border: 2px solid rgb(3, 12, 29); */
+    width: 2rem;
+    padding: 0.3rem 15px;
     border-radius: 0.5rem;
     transition: 0.5s;
 }
 
-#addTaskBtn > button:hover {
+#addTaskBtn > p:hover {
     background-color: rgb(3, 12, 29);
-
-    transition: 0.5s;
-    transform: rotate(180deg);
+    color: #eeeeee;
+    transition: 0.6s;
+    cursor: pointer;
+    /* transform: rotate(180deg); */
 }
