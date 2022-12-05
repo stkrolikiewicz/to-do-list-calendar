@@ -1,17 +1,17 @@
 {
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "mongoose": "^6.7.5",
-    "next": "latest",
-    "next-superjson": "^0.0.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "superjson": "^1.11.0",
-    "swr": "^1.0.1"
-  }
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start"
+    },
+    "dependencies": {
+        "mongoose": "^6.7.5",
+        "next": "13.0.5",
+        "next-superjson": "^0.0.4",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "superjson": "^1.11.0",
+        "swr": "^1.0.1"
+    }
 }
