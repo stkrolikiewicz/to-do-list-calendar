@@ -13,5 +13,8 @@
         "react-dom": "^18.2.0",
         "superjson": "^1.11.0",
         "swr": "^1.0.1"
+    },
+    "devDependencies": {
+        "eslint": "^8.29.0"
     }
 }
