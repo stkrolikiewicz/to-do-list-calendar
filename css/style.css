@@ -20,6 +20,7 @@
 main {
     display: inline-flex;
     /* background-color: yellowgreen; */
+    flex: 0 0 auto;
     width: calc(100vw - 1rem * 2);
     margin-inline: 1rem;
 }

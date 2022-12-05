@@ -34,7 +34,7 @@ const TaskPage = ({ task }) => {
                     </div>
                 </div>
             </div>
-            <div className="btns">
+            <div className="btns-view">
                 <Link href="/[id]/edit" as={`/${task._id}/edit`} legacyBehavior>
                     <button className="btn edit">Edit</button>
                 </Link>

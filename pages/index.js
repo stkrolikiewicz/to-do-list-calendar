@@ -14,13 +14,13 @@ const Index = ({ tasks }) => (
                 {tasks.map((task) => (
                     <div key={task._id} id="task">
                         <div className="data">
-                            <div className="check-name">
+                            <span className="name-check">
                                 <input type="checkbox" />
                                 <p class="name"> {task.name}</p>
-                                <p class="dueDate">{task.dueDate}</p>
-                                <p class="project">{task.project}</p>
-                                <p class="priority">{task.priority}</p>
-                            </div>
+                            </span>
+                            <p class="dueDate">{task.dueDate}</p>
+                            <p class="project">{task.project}</p>
+                            <p class="priority">{task.priority}</p>
                         </div>
                         <div className="btns">
                             <Link
