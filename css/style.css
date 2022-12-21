@@ -25,3 +25,10 @@ main {
     width: calc(100vw - 1rem * 2);
     margin-inline: 0.3rem;
 }
+
+#loading {
+    /* background-color: green; */
+    font-size: 2rem;
+    display:block;
+    margin: auto;
+}
