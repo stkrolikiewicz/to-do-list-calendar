@@ -10,7 +10,6 @@ const TaskPage = ({ task }) => {
     const [message, setMessage] = useState("");
     const handleDelete = async () => {
         const taskID = router.query.id;
-
         try {
             await fetch(`/api/tasks/${taskID}`, {
                 method: "Delete",

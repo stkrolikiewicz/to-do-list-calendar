@@ -16,6 +16,7 @@
     scroll-behavior: smooth;
     height: calc(100vh - var(--top-bar-height) - 0.5rem * 2);
     /* position: relative; */
+    /* background-image: url("../assets/done.png"); */
 }
 
 #task {

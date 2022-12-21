@@ -5,46 +5,79 @@ import unchecked from "../assets/unchecked-checkbox.png";
 import checked from "../assets/checked-checkbox.png";
 import Image from "next/image";
 import NewTask from "../components/NewTask";
+import AllDone from "../components/AllDone";
+import { useRouter } from "next/router";
+import {useEffect} from "react"
 
-const Index = ({ tasks }) => (
-    <>
-        {/* Create a card for each task */}
-        <section id="tasks-container">
-            <div id="tasks-list">
-                {tasks.map((task) => (
-                    <div key={task._id} id="task">
-                        <div className="data">
-                            <span className="name-check">
-                                <input type="checkbox" />
-                                <p class="name"> {task.name}</p>
-                            </span>
-                            {task.dueDate && <p class="dueDate">{task.dueDate}</p>}
-                            {task.project && <p class="project">{task.project}</p>}
-                            {task.priority && <p class="priority">{task.priority}</p>}
+const Index = ({ tasks }) => {
+    const router = useRouter();
+    const handleDelete = async (id) => {
+        // const taskID = router.query.id
+        // useEffect(() => {console.log("1")}, []);
+        console.log(id);
+        try {
+            await fetch(`/api/tasks/${taskID}`, {
+                method: "Delete",
+            });
+            router.push("/");
+        } catch (error) {
+            setMessage("Failed to delete the task.");
+        }
+    };
+    return (
+        <>
+            {/* Create a card for each task */}
+            <section id="tasks-container">
+                <div id="tasks-list">
+                    {tasks.length === 0 && <AllDone sign="ALL TASK COMPLETED!"/>}
+                    {tasks.map((task) => (
+                        <div key={task._id} id="task">
+                            <div className="data">
+                                <span className="name-check">
+                                    <input type="checkbox" />
+                                    <p class="name"> {task.name}</p>
+                                </span>
+                                {task.dueDate && <p class="dueDate">{task.dueDate}</p>}
+                                {task.project && <p class="project">{task.project}</p>}
+                                {task.priority && <p class="priority">{task.priority}</p>}
+                            </div>
+                            <div className="btns">
+                                <Link
+                                    href="/[id]/edit"
+                                    as={`/${task._id}/edit`}
+                                    legacyBehavior
+                                >
+                                    <button className="btn edit">Edit</button>
+                                </Link>
+                                <Link
+                                    href="/[id]"
+                                    as={`/${task._id}`}
+                                    legacyBehavior
+                                >
+                                    <button className="btn view">View</button>
+                                </Link>
+                                <button className="btn delete" onClick={() => {
+
+                                    try {
+                                        fetch(`/api/tasks/${task._id.toString()}`, {
+                                            method: "Delete",
+                                        });
+                                        router.push("/");
+                                    } catch (error) {
+                                        setMessage("Failed to delete the task.");
+                                    }
+                                }}>
+                                    Delete
+                                </button>
+                            </div>
                         </div>
-                        <div className="btns">
-                            <Link
-                                href="/[id]/edit"
-                                as={`/${task._id}/edit`}
-                                legacyBehavior
-                            >
-                                <button className="btn edit">Edit</button>
-                            </Link>
-                            <Link
-                                href="/[id]"
-                                as={`/${task._id}`}
-                                legacyBehavior
-                            >
-                                <button className="btn view">View</button>
-                            </Link>
-                        </div>
-                    </div>
-                ))}
-            </div>
-            <NewTask />
-        </section>
-    </>
-);
+                    ))}
+                </div>
+                <NewTask />
+            </section>
+        </>
+    )
+};
 
 /* Retrieves task(s) data from mongodb database */
 export async function getServerSideProps() {

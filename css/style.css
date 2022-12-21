@@ -6,7 +6,7 @@
 }
 
 :root {
-    --top-bar-height: 50px;
+    --top-bar-height: 70px;
     --main-grey: rgba(212, 201, 201, 0.9);
     --dark-grey: rgba(116, 112, 112, 0.6);
     --main-blue: #4c8db3bd;
@@ -31,4 +31,19 @@ main {
     font-size: 2rem;
     display:block;
     margin: auto;
+}
+
+#all-done {
+    font-size: 2rem;
+    font-style: italic;
+    /* display:block; */
+    /* margin: auto; */
+    width: calc(100%);
+    height: calc(100vh - var(--top-bar-height) - 20px - 4rem);
+    display: flex;
+    flex-direction:column;
+    /* text-align: center; */
+    align-items: center;
+    justify-content:center;
+    /* background-image: url(http://www.transparenttextures.com/patterns/cartographer.png);  */
 }
