@@ -26,6 +26,7 @@
 @media screen and (max-width: 500px) {
     .sidebar {
         position: fixed;
+        background-color: var(--main-grey);
     }
 }
 

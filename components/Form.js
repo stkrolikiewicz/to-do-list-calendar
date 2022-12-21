@@ -84,16 +84,24 @@ const Form = ({ formId, taskForm, forNewTask = true, tab }) => {
         if (!form.name) err.name = "Name is required";
         return err;
     };
-
+    
     const [formDisplay, setFormDisplay] =
         tab === "main" ? useState("none") : useState("block");
     const [plusBtnDisplay, setPlusBtnDisplay] =
         tab === "main" ? useState("block") : useState("none");
+
     const addTask = () => {
+        const button = document.getElementById("addTaskBtn");
+        button.style.opacity = "0";
+        button.style.zIndex = "-1";
+        button.style.transition = "0.5s";
+
         formDisplay === "block"
             ? setFormDisplay("none")
             : setFormDisplay("block");
-        setPlusBtnDisplay("none");
+        setTimeout(() => {
+            document.getElementById("tasks-container").scrollTo(0, document.body.scrollHeight)
+        }, 200);
     };
 
     const handleSubmit = (e) => {
@@ -106,10 +114,24 @@ const Form = ({ formId, taskForm, forNewTask = true, tab }) => {
         } else {
             setErrors({ errs });
         }
+        const button = document.getElementById("addTaskBtn");
+        if (tab === "main") {
+            button.style.transition = "0.5s";
+            button.style.zIndex = "100";
+            button.style.opacity = "1";
+        };
     };
     const handleCancel = () => {
+        const button = document.getElementById("addTaskBtn");
+        
+        // setPlusBtnDisplay("block");
+        // task.name.value = "";
         setFormDisplay("none");
-        tab === "main" && setPlusBtnDisplay("block");
+        if (tab === "main") {
+            button.style.transition = "0.5s";
+            button.style.zIndex = "100";
+            button.style.opacity = "1";
+        };
     };
 
     return (
@@ -126,7 +148,7 @@ const Form = ({ formId, taskForm, forNewTask = true, tab }) => {
                 onSubmit={handleSubmit}
                 style={{ display: `${formDisplay}` }}
             >
-                <div className="inputs">
+                <div id="hello" className="inputs">
                     <input
                         type="text"
                         name="name"

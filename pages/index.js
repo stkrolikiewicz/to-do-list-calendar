@@ -41,7 +41,6 @@ const Index = ({ tasks }) => (
                     </div>
                 ))}
             </div>
-
             <NewTask />
         </section>
     </>
