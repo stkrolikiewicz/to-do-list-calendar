@@ -33,12 +33,14 @@ const EditTask = () => {
     };
 
     return (
-        <Form
-            formId="edit-task-form"
-            taskForm={taskForm}
-            forNewTask={false}
-            tab="edit"
-        />
+        <div id="task-edit">
+            <Form
+                formId="edit-task-form"
+                taskForm={taskForm}
+                forNewTask={false}
+                tab="edit"
+            />
+        </div>
     );
 };
 

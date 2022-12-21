@@ -5,7 +5,7 @@ const AllDone = (props) => {
     return (
         <div id="all-done">
             <p >{props.sign}</p>
-            <Image src={done} height={300}/>  
+            <Image src={done} width={370} className={'image'}/>  
         </div>
     )
 }

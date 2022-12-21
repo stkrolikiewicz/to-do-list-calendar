@@ -5,20 +5,7 @@ header {
     /* background-color: var(--dark-blue); */
     background-color: var(--dark-grey);
     background-image: url(http://www.transparenttextures.com/patterns/cartographer.png);
-    /* -webkit-backdrop-filter: blur(10px); */
-    /* backdrop-filter: blur(10px); */
     box-shadow: 1px 1px 2px 0px rgb(146, 146, 146);
-    /* background: linear-gradient(
-        45deg,
-        rgba(23, 23, 26, 0.9),
-        rgba(75, 75, 83, 0.8)
-    ); */
-    /* background: linear-gradient(
-        60deg,
-        rgba(0, 110, 255, 0.9),
-        rgba(16, 117, 156, 0.4),
-        rgba(0, 99, 138, 0.8)
-    ); */
     color: var(--light);
     align-items: center;
     font-family: "Exo 2", sans-serif;

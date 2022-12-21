@@ -1,50 +1,19 @@
-/* #task-form {
-    display: none;
-    flex-wrap: wrap;
-} */
-
 #addNewTask {
-    margin: auto;
+    /* margin: auto; */
 }
 
 .inputs {
-    /* border: 1px solid var(--dark-grey); */
-    background-color: var(--main-grey);
-    /* background: linear-gradient(#7474ec38, #ffffff); */
-
-    /* background: linear-gradient(
-        rgba(173, 173, 173, 0.4),
-        rgba(255, 255, 255, 0.8)
-    ); */
-    /* background: linear-gradient(var(--dark-blue), rgba(255, 255, 255, 0.8)); */
-    border-radius: 1rem;
+    border-radius: 0.7rem;
     color: black;
     padding: 1.5rem;
-    margin-top: 1rem;
     width: auto;
     display: flex;
     flex-direction: column;
-    border-width: 5px;
-    /* background: var(--gradient); */
-    background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
-
+    border-width: 3px;
+    background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
     border: 0;
     position: relative;
     z-index: 5;
-}
-
-input::before {
-    content: "";
-
-    display: block;
-    width: calc(100% - 5px * 2);
-    height: calc(100% - 5px * 2);
-    background: var(--main);
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    z-index: -1;
-    border-radius: 0.7rem;
 }
 
 .inputs input,

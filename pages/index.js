@@ -5,9 +5,9 @@ import unchecked from "../assets/unchecked-checkbox.png";
 import checked from "../assets/checked-checkbox.png";
 import Image from "next/image";
 import NewTask from "../components/NewTask";
-import AllDone from "../components/AllDone";
 import { useRouter } from "next/router";
 import {useEffect} from "react"
+import AllDone from "../components/AllDone";
 
 const Index = ({ tasks }) => {
     const router = useRouter();
@@ -29,13 +29,19 @@ const Index = ({ tasks }) => {
             {/* Create a card for each task */}
             <section id="tasks-container">
                 <div id="tasks-list">
-                    {tasks.length === 0 && <AllDone sign="ALL TASK COMPLETED!"/>}
+                    {tasks.length === 0 && <AllDone sign="ALL TASKS COMPLETED!" />}
                     {tasks.map((task) => (
                         <div key={task._id} id="task">
                             <div className="data">
                                 <span className="name-check">
                                     <input type="checkbox" />
-                                    <p class="name"> {task.name}</p>
+                                    <Link
+                                        href="/[id]"
+                                        as={`/${task._id}`}
+                                        legacyBehavior
+                                    >
+                                        <p class="name"> {task.name}</p>
+                                    </Link>
                                 </span>
                                 {task.dueDate && <p class="dueDate">{task.dueDate}</p>}
                                 {task.project && <p class="project">{task.project}</p>}

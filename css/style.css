@@ -20,9 +20,8 @@
 
 main {
     display: inline-flex;
-    /* background-color: yellowgreen; */
-    flex: 0 0 auto;
-    width: calc(100vw - 1rem * 2);
+    /* flex: 0 0 auto; */
+    width: calc(100% - 0.6rem);
     margin-inline: 0.3rem;
 }
 
@@ -34,16 +33,29 @@ main {
 }
 
 #all-done {
-    font-size: 2rem;
+    margin-top: 1rem;
+    font-size: 1.9rem;
     font-style: italic;
-    /* display:block; */
-    /* margin: auto; */
-    width: calc(100%);
-    height: calc(100vh - var(--top-bar-height) - 20px - 4rem);
+    /* width: 50%; */
+    /* max-width: 60vw; */
     display: flex;
     flex-direction:column;
-    /* text-align: center; */
+    /* flex-wrap: wrap; */
     align-items: center;
-    justify-content:center;
-    /* background-image: url(http://www.transparenttextures.com/patterns/cartographer.png);  */
+    /* margin: auto; */
+    /* justify-content:center; */
+}
+
+.image {
+    object-fit: contain;
+    width: 100% !important;
+    max-width: 500px;
+    position: relative !important;
+    height: unset !important;
+}
+@media (max-width: 360px) {
+    #all-done {
+        font-size: 1.4rem;
+    }
+
 }
