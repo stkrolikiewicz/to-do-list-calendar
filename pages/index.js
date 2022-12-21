@@ -18,9 +18,9 @@ const Index = ({ tasks }) => (
                                 <input type="checkbox" />
                                 <p class="name"> {task.name}</p>
                             </span>
-                            <p class="dueDate">{task.dueDate}</p>
-                            <p class="project">{task.project}</p>
-                            <p class="priority">{task.priority}</p>
+                            {task.dueDate && <p class="dueDate">{task.dueDate}</p>}
+                            {task.project && <p class="project">{task.project}</p>}
+                            {task.priority && <p class="priority">{task.priority}</p>}
                         </div>
                         <div className="btns">
                             <Link

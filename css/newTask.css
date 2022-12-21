@@ -1,6 +1,9 @@
 #addTaskBtn {
     margin: 1.5rem 0;
     /* display: inline-flex; */
+    position: fixed;
+    bottom: 2rem;
+    right: 8rem;
 }
 
 #addTaskBtn > * {
@@ -9,18 +12,20 @@
 
 #addTaskBtn > p {
     margin-right: 0.5rem;
-    background: transparent;
+    /* background: transparent; */
+    background-color: rgb(3, 12, 29);
+    color: #eeeeee;
     font-size: 1.2rem;
-    /* border: 2px solid rgb(3, 12, 29); */
+    /* border: 1.5px solid rgb(3, 12, 29); */
     width: 2rem;
-    padding: 0.3rem 15px;
-    border-radius: 0.5rem;
+    padding: 10px 15px;
+    border-radius: 5px;
     transition: 0.5s;
 }
 
 #addTaskBtn > p:hover {
-    background-color: rgb(3, 12, 29);
-    color: #eeeeee;
+    background-color: var(--dark-blue);
+
     transition: 0.6s;
     cursor: pointer;
     /* transform: rotate(180deg); */

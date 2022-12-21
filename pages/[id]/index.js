@@ -25,12 +25,12 @@ const TaskPage = ({ task }) => {
         <div key={task._id} id="task-view">
             <div className="data-view">
                 <div className="check-name-view">
-                    <p class="name"> {task.name}</p>
-                    <p class="description">{task.description}</p>
+                    <p class="name-view"> {task.name}</p>
+                    <p class="description-view">{task.description}</p>
                     <div className="flags-view">
-                        <p class="dueDate">Date: {task.dueDate}</p>
-                        <p class="project">Project {task.project}</p>
-                        <p class="priority">priority: {task.priority}</p>
+                        {task.dueDate && <p class="dueDate">Date: {task.dueDate}</p>}
+                        {task.project && <p class="project">Project {task.project}</p>}
+                        {task.priority && <p class="priority">priority: {task.priority}</p>}
                     </div>
                 </div>
             </div>
@@ -41,9 +41,9 @@ const TaskPage = ({ task }) => {
                 <button className="btn delete" onClick={handleDelete}>
                     Delete
                 </button>
-                <button className="btn check" onClick={handleCheck}>
+                {/* <button className="btn check" onClick={handleCheck}>
                     Check Task
-                </button>
+                </button> */}
             </div>
             {message && <p>{message}</p>}
         </div>

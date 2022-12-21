@@ -119,7 +119,7 @@ const Form = ({ formId, taskForm, forNewTask = true, tab }) => {
                 onClick={addTask}
                 style={{ display: `${plusBtnDisplay}` }}
             >
-                <p>+ Add new task</p>
+                <p>+ Add task</p>
             </div>
             <form
                 id={formId}

@@ -1,16 +1,19 @@
 .sidebar {
-    background-color: var(--sidebar-blue);
+    /* background-color: var(--sidebar-blue); */
+    /* background-color: #5c008a; */
+    /* background-color: var(--main-grey); */
+    background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
     width: 200px;
     /* width: 100%; */
     overflow-y: hidden;
     overflow-x: hidden;
     flex-shrink: 0;
-    border-radius: 1rem;
+    border-radius: 0.2rem;
     /* border: 4px solid var(--sidebar-blue); */
     /* position: absolute; */
     height: calc(100vh - var(--top-bar-height) - 0.5rem * 2);
     transition: 300ms ease-in-out;
-    box-shadow: 1px 1px 2px 0px rgb(146, 146, 146);
+    /* box-shadow: 1px 1px 2px 0px rgb(146, 146, 146); */
     z-index: 10;
 }
 

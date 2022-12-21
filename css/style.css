@@ -8,13 +8,14 @@
 :root {
     --top-bar-height: 50px;
     --main-grey: rgba(212, 201, 201, 0.9);
-    --dark-grey: rgba(116, 112, 112, 0.9);
+    --dark-grey: rgba(116, 112, 112, 0.6);
     --main-blue: #4c8db3bd;
     --sidebar-blue: #d1caa1;
     --dark-blue: #152d3b;
     --dark-blue-blur: #0c1d27d7;
     --light: #fdfffc;
     --sidebar-width: 250px;
+    --main: white;
 }
 
 main {
@@ -22,5 +23,5 @@ main {
     /* background-color: yellowgreen; */
     flex: 0 0 auto;
     width: calc(100vw - 1rem * 2);
-    margin-inline: 1rem;
+    margin-inline: 0.3rem;
 }

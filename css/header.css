@@ -2,7 +2,11 @@ header {
     position: sticky;
     top: 0.3rem;
     display: flex;
-    background-color: var(--dark-blue);
+    /* background-color: var(--dark-blue); */
+    background-color: var(--dark-grey);
+    background-image: url(http://www.transparenttextures.com/patterns/cartographer.png);
+    /* -webkit-backdrop-filter: blur(10px); */
+    /* backdrop-filter: blur(10px); */
     box-shadow: 1px 1px 2px 0px rgb(146, 146, 146);
     /* background: linear-gradient(
         45deg,
@@ -21,7 +25,7 @@ header {
     height: var(--top-bar-height);
     z-index: 100;
     margin: 0.3rem;
-    border-radius: 1.2rem;
+    border-radius: 0.2rem;
     /* border-bottom: 1px solid var(--dark-grey); */
 }
 
@@ -61,7 +65,7 @@ header > nav > ul {
 }
 
 header li.active {
-    background: var(--main-blue);
+    background: rgb(3, 12, 29)
     /* background-color: var(--light);
     color: var(--dark-blue); */
     /* border: 1px solid var(--light); */
@@ -82,7 +86,7 @@ header li:hover {
     transition: 0.2s;
     /* background-color: var(--main-grey);
     color: var(--dark-blue); */
-    background: var(--main-blue);
+    background: rgb(3, 12, 29);
     /* border: 1px solid var(--light); */
     /* border-bottom: 0px; */
     /* color: var(--dark-blue); */
@@ -116,7 +120,7 @@ header button {
     margin-left: 1rem;
 }
 header button:hover {
-    background: var(--main-blue);
+    background: rgb(3, 12, 29);
     color: var(--light);
     border: 0px solid;
     border-radius: 0.2rem;
