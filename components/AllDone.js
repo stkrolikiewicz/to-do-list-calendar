@@ -4,10 +4,12 @@ import done from "../assets/done.png";
 const AllDone = (props) => {
     return (
         <div id="all-done">
-            <p >{props.sign}</p>
-            <Image src={done} width={370} className={'image'}/>  
+            <div>
+                <p>{props.sign}</p>
+            </div>
+            <Image src={done} className={"image"} />{" "}
         </div>
-    )
-}
+    );
+};
 
 export default AllDone;

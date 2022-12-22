@@ -28,34 +28,43 @@ main {
 #loading {
     /* background-color: green; */
     font-size: 2rem;
-    display:block;
+    display: block;
     margin: auto;
 }
 
 #all-done {
-    margin-top: 1rem;
+    /* margin-top: 2rem; */
     font-size: 1.9rem;
     font-style: italic;
-    /* width: 50%; */
-    /* max-width: 60vw; */
+    /* text-align: center; */
     display: flex;
-    flex-direction:column;
-    /* flex-wrap: wrap; */
-    align-items: center;
-    /* margin: auto; */
-    /* justify-content:center; */
-}
+    /* flex-shrink: 1; */
+    flex-direction: column;
 
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    overflow-x: hidden;
+
+    /* background-color: var(--main-grey); */
+}
 .image {
     object-fit: contain;
-    width: 100% !important;
-    max-width: 500px;
-    position: relative !important;
-    height: unset !important;
+    width: 500px;
+    height: auto;
 }
+
 @media (max-width: 360px) {
     #all-done {
         font-size: 1.4rem;
     }
+}
 
+@media (max-width: 600px) {
+    .image {
+        object-fit: contain;
+        width: 250px;
+        height: auto;
+    }
 }

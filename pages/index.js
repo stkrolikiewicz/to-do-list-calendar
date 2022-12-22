@@ -6,7 +6,7 @@ import checked from "../assets/checked-checkbox.png";
 import Image from "next/image";
 import NewTask from "../components/NewTask";
 import { useRouter } from "next/router";
-import {useEffect} from "react"
+import { useEffect } from "react";
 import AllDone from "../components/AllDone";
 
 const Index = ({ tasks }) => {
@@ -28,8 +28,8 @@ const Index = ({ tasks }) => {
         <>
             {/* Create a card for each task */}
             <section id="tasks-container">
+                {tasks.length === 0 && <AllDone sign="ALL TASKS COMPLETED!" />}
                 <div id="tasks-list">
-                    {tasks.length === 0 && <AllDone sign="ALL TASKS COMPLETED!" />}
                     {tasks.map((task) => (
                         <div key={task._id} id="task">
                             <div className="data">
@@ -43,9 +43,15 @@ const Index = ({ tasks }) => {
                                         <p class="name"> {task.name}</p>
                                     </Link>
                                 </span>
-                                {task.dueDate && <p class="dueDate">{task.dueDate}</p>}
-                                {task.project && <p class="project">{task.project}</p>}
-                                {task.priority && <p class="priority">{task.priority}</p>}
+                                {task.dueDate && (
+                                    <p class="dueDate">{task.dueDate}</p>
+                                )}
+                                {task.project && (
+                                    <p class="project">{task.project}</p>
+                                )}
+                                {task.priority && (
+                                    <p class="priority">{task.priority}</p>
+                                )}
                             </div>
                             <div className="btns">
                                 <Link
@@ -62,17 +68,24 @@ const Index = ({ tasks }) => {
                                 >
                                     <button className="btn view">View</button>
                                 </Link>
-                                <button className="btn delete" onClick={() => {
-
-                                    try {
-                                        fetch(`/api/tasks/${task._id.toString()}`, {
-                                            method: "Delete",
-                                        });
-                                        router.push("/");
-                                    } catch (error) {
-                                        setMessage("Failed to delete the task.");
-                                    }
-                                }}>
+                                <button
+                                    className="btn delete"
+                                    onClick={() => {
+                                        try {
+                                            fetch(
+                                                `/api/tasks/${task._id.toString()}`,
+                                                {
+                                                    method: "Delete",
+                                                }
+                                            );
+                                            router.push("/");
+                                        } catch (error) {
+                                            setMessage(
+                                                "Failed to delete the task."
+                                            );
+                                        }
+                                    }}
+                                >
                                     Delete
                                 </button>
                             </div>
@@ -82,7 +95,7 @@ const Index = ({ tasks }) => {
                 <NewTask />
             </section>
         </>
-    )
+    );
 };
 
 /* Retrieves task(s) data from mongodb database */
