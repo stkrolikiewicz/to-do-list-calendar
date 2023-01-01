@@ -28,10 +28,16 @@ const EditTask = () => {
         );
     }
 
+    if (task.date) {
+        task.date = task.date.split("T")[0];
+    } else {
+        task.date = "";
+    }
+
     const taskForm = {
         name: task.name,
         description: task.description,
-        date: task.date.split("T")[0],
+        date: task.date,
         project: task.project,
         priority: task.priority,
     };
