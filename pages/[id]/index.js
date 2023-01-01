@@ -12,7 +12,6 @@ import {
     faFlag,
     faArrowLeftLong,
 } from "@fortawesome/free-solid-svg-icons";
-import Alert from "../../components/Alert";
 
 /* Allows you to view task card info and delete task card*/
 const TaskPage = ({ task }) => {
