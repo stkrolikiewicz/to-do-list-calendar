@@ -1,34 +1,38 @@
 import Link from "next/link";
 import dbConnect from "../lib/dbConnect";
 import Task from "../models/Task";
-import unchecked from "../assets/unchecked-checkbox.png";
-import checked from "../assets/checked-checkbox.png";
-import Image from "next/image";
 import NewTask from "../components/NewTask";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 import AllDone from "../components/AllDone";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faSpinner,
+    faHashtag,
+    faCalendarDays,
+    faFlag,
+} from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 const Index = ({ tasks }) => {
+    const [loadingStatus, setLoadingStatus] = useState(false);
+
     const router = useRouter();
-    const handleDelete = async (id) => {
-        // const taskID = router.query.id
-        // useEffect(() => {console.log("1")}, []);
-        console.log(id);
-        try {
-            await fetch(`/api/tasks/${taskID}`, {
-                method: "Delete",
-            });
-            router.push("/");
-        } catch (error) {
-            setMessage("Failed to delete the task.");
-        }
-    };
     return (
         <>
             {/* Create a card for each task */}
             <section id="tasks-container">
                 {tasks.length === 0 && <AllDone sign="ALL TASKS COMPLETED!" />}
+                {loadingStatus && (
+                    <div id="loading">
+                        <p>Loading</p>
+                        <FontAwesomeIcon
+                            icon={faSpinner}
+                            spin={true}
+                            size="2x"
+                        />
+                    </div>
+                )}
                 <div id="tasks-list">
                     {tasks.map((task) => (
                         <div key={task._id} id="task">
@@ -43,14 +47,30 @@ const Index = ({ tasks }) => {
                                         <p class="name"> {task.name}</p>
                                     </Link>
                                 </span>
-                                {task.dueDate && (
-                                    <p class="dueDate">{task.dueDate}</p>
+                                {task.date && (
+                                    <p class="dueDate">
+                                        <>
+                                            <FontAwesomeIcon
+                                                icon={faCalendarDays}
+                                            />{" "}
+                                            {task.date}
+                                        </>
+                                    </p>
                                 )}
                                 {task.project && (
-                                    <p class="project">{task.project}</p>
+                                    <p class="project">
+                                        <FontAwesomeIcon icon={faHashtag} />
+                                        {" project "}
+                                        {task.project}
+                                    </p>
                                 )}
                                 {task.priority && (
-                                    <p class="priority">{task.priority}</p>
+                                    <>
+                                        <p class="priority">
+                                            <FontAwesomeIcon icon={faFlag} />{" "}
+                                            {task.priority}
+                                        </p>
+                                    </>
                                 )}
                             </div>
                             <div className="btns">
@@ -86,7 +106,15 @@ const Index = ({ tasks }) => {
                                         }
                                     }}
                                 >
-                                    Delete
+                                    {loadingStatus ? (
+                                        <FontAwesomeIcon
+                                            icon={faSpinner}
+                                            spin={true}
+                                            size="1x"
+                                        />
+                                    ) : (
+                                        <>Delete</>
+                                    )}
                                 </button>
                             </div>
                         </div>
@@ -107,7 +135,7 @@ export async function getServerSideProps() {
     const tasks = result.map((doc) => {
         const task = doc.toObject();
         task._id = task._id.toString();
-        task.date = `${task.date}`;
+        task.date = task.date.toISOString().split("T")[0];
 
         return task;
     });

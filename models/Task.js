@@ -17,12 +17,10 @@ const TaskSchema = new mongoose.Schema({
     },
     date: {
         /* The date of your task */
-
-        type: Date,
+        type: String,
     },
     project: {
         /* task's project, if applicable */
-
         type: String,
     },
     priority: {

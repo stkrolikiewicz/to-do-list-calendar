@@ -1,9 +1,9 @@
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import Form from "../../components/Form";
-import '@fortawesome/fontawesome-svg-core/styles.css';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 const fetcher = (url) =>
     fetch(url)
@@ -19,15 +19,19 @@ const EditTask = () => {
     );
 
     if (error) return <p>Failed to load</p>;
-    if (!task) return (
-        <p id="loading">Loading...</p>
-        // <FontAwesomeIcon icon={faCircleNotch} spin={true} />
-    )
+    if (!task) {
+        return (
+            <div id="loading">
+                <p>Loading...</p>
+                <FontAwesomeIcon icon={faSpinner} spin={true} size="2x" />
+            </div>
+        );
+    }
 
     const taskForm = {
         name: task.name,
         description: task.description,
-        date: task.date,
+        date: task.date.split("T")[0],
         project: task.project,
         priority: task.priority,
     };

@@ -16,6 +16,16 @@ const Form = ({ formId, taskForm, forNewTask = true, tab }) => {
         priority: taskForm.priority,
     });
 
+    const resetForm = () => {
+        setForm({
+            name: "",
+            description: "",
+            date: "",
+            project: "",
+            priority: "",
+        });
+    };
+
     /* The PUT method edits an existing entry in the mongodb database. */
     const putData = async (form) => {
         const { id } = router.query;
@@ -84,7 +94,7 @@ const Form = ({ formId, taskForm, forNewTask = true, tab }) => {
         if (!form.name) err.name = "Name is required";
         return err;
     };
-    
+
     const [formDisplay, setFormDisplay] =
         tab === "main" ? useState("none") : useState("block");
     const [plusBtnDisplay, setPlusBtnDisplay] =
@@ -100,7 +110,9 @@ const Form = ({ formId, taskForm, forNewTask = true, tab }) => {
             ? setFormDisplay("none")
             : setFormDisplay("block");
         setTimeout(() => {
-            document.getElementById("tasks-container").scrollTo(0, document.body.scrollHeight)
+            document
+                .getElementById("tasks-container")
+                .scrollTo(0, document.body.scrollHeight);
         }, 200);
     };
 
@@ -119,11 +131,11 @@ const Form = ({ formId, taskForm, forNewTask = true, tab }) => {
             button.style.transition = "0.5s";
             button.style.zIndex = "100";
             button.style.opacity = "1";
-        };
+        }
     };
-    const handleCancel = () => {
+    const handleCancel = (e) => {
+        e.preventDefault();
         const button = document.getElementById("addTaskBtn");
-        
         // setPlusBtnDisplay("block");
         // task.name.value = "";
         setFormDisplay("none");
@@ -131,7 +143,9 @@ const Form = ({ formId, taskForm, forNewTask = true, tab }) => {
             button.style.transition = "0.5s";
             button.style.zIndex = "100";
             button.style.opacity = "1";
-        };
+        }
+        resetForm();
+        if (tab === "edit") router.push("/");
     };
 
     return (

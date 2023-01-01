@@ -3,6 +3,15 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import dbConnect from "../../lib/dbConnect";
 import Task from "../../models/Task";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faSpinner,
+    faHashtag,
+    faCalendarDays,
+    faFlag,
+    faArrowLeftLong,
+} from "@fortawesome/free-solid-svg-icons";
 
 /* Allows you to view task card info and delete task card*/
 const TaskPage = ({ task }) => {
@@ -20,6 +29,7 @@ const TaskPage = ({ task }) => {
         }
     };
     const handleCheck = async () => {};
+
     return (
         <div key={task._id} id="task-view">
             <div className="data-view">
@@ -27,13 +37,37 @@ const TaskPage = ({ task }) => {
                     <p class="name-view"> {task.name}</p>
                     <p class="description-view">{task.description}</p>
                     <div className="flags-view">
-                        {task.dueDate && <p class="dueDate">Date: {task.dueDate}</p>}
-                        {task.project && <p class="project">Project {task.project}</p>}
-                        {task.priority && <p class="priority">priority: {task.priority}</p>}
+                        {task.date && (
+                            <p class="dueDate">
+                                <>
+                                    <FontAwesomeIcon icon={faCalendarDays} />{" "}
+                                    {task.date}
+                                </>
+                            </p>
+                        )}
+                        {task.project && (
+                            <p class="project">
+                                <FontAwesomeIcon icon={faHashtag} />
+                                {" project "}
+                                {task.project}
+                            </p>
+                        )}
+                        {task.priority && (
+                            <p class="priority">
+                                <FontAwesomeIcon icon={faFlag} />
+                                {" priority: "}
+                                {task.priority}
+                            </p>
+                        )}
                     </div>
                 </div>
             </div>
             <div className="btns-view">
+                <Link href="/">
+                    <button className="btn back">
+                        <FontAwesomeIcon icon={faArrowLeftLong} />
+                    </button>
+                </Link>
                 <Link href="/[id]/edit" as={`/${task._id}/edit`} legacyBehavior>
                     <button className="btn edit">Edit</button>
                 </Link>
@@ -54,7 +88,7 @@ export async function getServerSideProps({ params }) {
 
     const task = await Task.findById(params.id).lean();
     task._id = task._id.toString();
-    task.date = `${task.date}`;
+    task.date = task.date.toISOString().split("T")[0];
     return { props: { task } };
 }
 
