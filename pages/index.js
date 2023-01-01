@@ -6,7 +6,12 @@ import { useRouter } from "next/router";
 import AllDone from "../components/AllDone";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import {
+    faSpinner,
+    faHashtag,
+    faCalendarDays,
+    faFlag,
+} from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 const Index = ({ tasks }) => {
@@ -44,17 +49,28 @@ const Index = ({ tasks }) => {
                                 </span>
                                 {task.date && (
                                     <p class="dueDate">
-                                        {
-                                            // let a = new Date(task.date);
-                                            <>{task.date}</>
-                                        }
+                                        <>
+                                            <FontAwesomeIcon
+                                                icon={faCalendarDays}
+                                            />{" "}
+                                            {task.date}
+                                        </>
                                     </p>
                                 )}
                                 {task.project && (
-                                    <p class="project">{task.project}</p>
+                                    <p class="project">
+                                        <FontAwesomeIcon icon={faHashtag} />
+                                        {" project "}
+                                        {task.project}
+                                    </p>
                                 )}
                                 {task.priority && (
-                                    <p class="priority">{task.priority}</p>
+                                    <>
+                                        <p class="priority">
+                                            <FontAwesomeIcon icon={faFlag} />{" "}
+                                            {task.priority}
+                                        </p>
+                                    </>
                                 )}
                             </div>
                             <div className="btns">

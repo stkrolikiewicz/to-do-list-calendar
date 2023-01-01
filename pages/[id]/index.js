@@ -3,6 +3,14 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import dbConnect from "../../lib/dbConnect";
 import Task from "../../models/Task";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faSpinner,
+    faHashtag,
+    faCalendarDays,
+    faFlag,
+} from "@fortawesome/free-solid-svg-icons";
 
 /* Allows you to view task card info and delete task card*/
 const TaskPage = ({ task }) => {
@@ -28,12 +36,27 @@ const TaskPage = ({ task }) => {
                     <p class="name-view"> {task.name}</p>
                     <p class="description-view">{task.description}</p>
                     <div className="flags-view">
-                        {task.date && <p class="dueDate">Date: {task.date}</p>}
+                        {task.date && (
+                            <p class="dueDate">
+                                <>
+                                    <FontAwesomeIcon icon={faCalendarDays} />{" "}
+                                    {task.date}
+                                </>
+                            </p>
+                        )}
                         {task.project && (
-                            <p class="project">Project {task.project}</p>
+                            <p class="project">
+                                <FontAwesomeIcon icon={faHashtag} />
+                                {" project "}
+                                {task.project}
+                            </p>
                         )}
                         {task.priority && (
-                            <p class="priority">priority: {task.priority}</p>
+                            <p class="priority">
+                                <FontAwesomeIcon icon={faFlag} />
+                                {" priority: "}
+                                {task.priority}
+                            </p>
                         )}
                     </div>
                 </div>

@@ -27,12 +27,11 @@ const EditTask = () => {
             </div>
         );
     }
-    let dateConverted = task.date.split("T")[0];
 
     const taskForm = {
         name: task.name,
         description: task.description,
-        date: dateConverted,
+        date: task.date.split("T")[0],
         project: task.project,
         priority: task.priority,
     };
