@@ -20,6 +20,7 @@ const TaskPage = ({ task }) => {
         }
     };
     const handleCheck = async () => {};
+
     return (
         <div key={task._id} id="task-view">
             <div className="data-view">
@@ -27,9 +28,13 @@ const TaskPage = ({ task }) => {
                     <p class="name-view"> {task.name}</p>
                     <p class="description-view">{task.description}</p>
                     <div className="flags-view">
-                        {task.dueDate && <p class="dueDate">Date: {task.dueDate}</p>}
-                        {task.project && <p class="project">Project {task.project}</p>}
-                        {task.priority && <p class="priority">priority: {task.priority}</p>}
+                        {task.date && <p class="dueDate">Date: {task.date}</p>}
+                        {task.project && (
+                            <p class="project">Project {task.project}</p>
+                        )}
+                        {task.priority && (
+                            <p class="priority">priority: {task.priority}</p>
+                        )}
                     </div>
                 </div>
             </div>
@@ -54,7 +59,7 @@ export async function getServerSideProps({ params }) {
 
     const task = await Task.findById(params.id).lean();
     task._id = task._id.toString();
-    task.date = `${task.date}`;
+    task.date = task.date.toISOString().split("T")[0];
     return { props: { task } };
 }
 

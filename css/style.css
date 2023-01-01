@@ -27,9 +27,14 @@ main {
 
 #loading {
     /* background-color: green; */
+    color: var(--dark-blue);
+    margin-top: 2rem;
     font-size: 2rem;
-    display: block;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    /* text-align: center; */
 }
 
 #all-done {
