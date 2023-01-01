@@ -135,7 +135,12 @@ export async function getServerSideProps() {
     const tasks = result.map((doc) => {
         const task = doc.toObject();
         task._id = task._id.toString();
-        task.date = task.date.toISOString().split("T")[0];
+        // task.date = `${task.date}`;
+        // task.date = `${task.date}`;
+        // task.date = "2021-08-01";
+        // task.date = task.date.toISOString().split("T")[0];
+        if (task.date) task.date = task.date.toISOString().split("T")[0];
+        else task.date = "";
 
         return task;
     });

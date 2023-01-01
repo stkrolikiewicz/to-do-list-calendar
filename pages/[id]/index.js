@@ -88,7 +88,8 @@ export async function getServerSideProps({ params }) {
 
     const task = await Task.findById(params.id).lean();
     task._id = task._id.toString();
-    task.date = task.date.toISOString().split("T")[0];
+    if (task.date) task.date = task.date.toISOString().split("T")[0];
+    else task.date = "";
     return { props: { task } };
 }
 
