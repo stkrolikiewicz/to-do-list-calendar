@@ -4,7 +4,6 @@ import Task from "../models/Task";
 import NewTask from "../components/NewTask";
 import { useRouter } from "next/router";
 import AllDone from "../components/AllDone";
-import Alert from "../components/Alert/Alert";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
