@@ -145,6 +145,7 @@ const Form = ({ formId, taskForm, forNewTask = true, tab }) => {
             button.style.opacity = "1";
         }
         resetForm();
+        if (tab === "edit") router.push("/");
     };
 
     return (

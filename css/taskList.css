@@ -214,6 +214,10 @@
     --accent: gray;
 }
 
+.back.btn {
+    --accent: var(--dark-blue);
+}
+
 input[type="checkbox"] {
     margin: 0;
     color: var(--dark-grey);

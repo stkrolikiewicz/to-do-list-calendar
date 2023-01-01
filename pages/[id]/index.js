@@ -10,6 +10,7 @@ import {
     faHashtag,
     faCalendarDays,
     faFlag,
+    faArrowLeftLong,
 } from "@fortawesome/free-solid-svg-icons";
 
 /* Allows you to view task card info and delete task card*/
@@ -62,6 +63,11 @@ const TaskPage = ({ task }) => {
                 </div>
             </div>
             <div className="btns-view">
+                <Link href="/">
+                    <button className="btn back">
+                        <FontAwesomeIcon icon={faArrowLeftLong} />
+                    </button>
+                </Link>
                 <Link href="/[id]/edit" as={`/${task._id}/edit`} legacyBehavior>
                     <button className="btn edit">Edit</button>
                 </Link>
