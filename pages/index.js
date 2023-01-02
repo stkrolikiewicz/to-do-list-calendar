@@ -11,6 +11,9 @@ import {
     faHashtag,
     faCalendarDays,
     faFlag,
+    faPen,
+    faEye,
+    faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
@@ -52,7 +55,7 @@ const Index = ({ tasks }) => {
                                         <>
                                             <FontAwesomeIcon
                                                 icon={faCalendarDays}
-                                            />{" "}
+                                            />
                                             {task.date}
                                         </>
                                     </p>
@@ -60,14 +63,14 @@ const Index = ({ tasks }) => {
                                 {task.project && (
                                     <p className="project">
                                         <FontAwesomeIcon icon={faHashtag} />
-                                        {" project "}
+                                        {"project "}
                                         {task.project}
                                     </p>
                                 )}
                                 {task.priority && (
                                     <>
                                         <p className="priority">
-                                            <FontAwesomeIcon icon={faFlag} />{" "}
+                                            <FontAwesomeIcon icon={faFlag} />
                                             {task.priority}
                                         </p>
                                     </>
@@ -79,14 +82,18 @@ const Index = ({ tasks }) => {
                                     as={`/${task._id}/edit`}
                                     legacyBehavior
                                 >
-                                    <button className="btn edit">Edit</button>
+                                    <button className="btn edit">
+                                        <FontAwesomeIcon icon={faPen} />
+                                    </button>
                                 </Link>
                                 <Link
                                     href="/[id]"
                                     as={`/${task._id}`}
                                     legacyBehavior
                                 >
-                                    <button className="btn view">View</button>
+                                    <button className="btn view">
+                                        <FontAwesomeIcon icon={faEye} />
+                                    </button>
                                 </Link>
                                 <button
                                     className="btn delete"
@@ -113,7 +120,9 @@ const Index = ({ tasks }) => {
                                             size="1x"
                                         />
                                     ) : (
-                                        <>Delete</>
+                                        <>
+                                            <FontAwesomeIcon icon={faTrash} />
+                                        </>
                                     )}
                                 </button>
                             </div>

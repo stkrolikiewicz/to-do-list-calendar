@@ -72,4 +72,8 @@ main {
         width: 250px;
         height: auto;
     }
+    main {
+        margin-inline: 0;
+        height: calc(100vh - var(--top-bar-height) - 1rem);
+    }
 }

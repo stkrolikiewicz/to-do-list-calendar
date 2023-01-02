@@ -17,7 +17,7 @@
     width: 0;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
     .sidebar {
         position: fixed;
         background-color: var(--main-grey);
