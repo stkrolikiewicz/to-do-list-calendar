@@ -17,7 +17,7 @@ const TaskSchema = new mongoose.Schema({
     },
     date: {
         /* The date of your task */
-        type: String,
+        type: Date,
     },
     project: {
         /* task's project, if applicable */

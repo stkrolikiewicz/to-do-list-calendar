@@ -34,11 +34,11 @@ const TaskPage = ({ task }) => {
         <div key={task._id} id="task-view">
             <div className="data-view">
                 <div className="check-name-view">
-                    <p class="name-view"> {task.name}</p>
-                    <p class="description-view">{task.description}</p>
+                    <p className="name-view"> {task.name}</p>
+                    <p className="description-view">{task.description}</p>
                     <div className="flags-view">
                         {task.date && (
-                            <p class="dueDate">
+                            <p className="dueDate">
                                 <>
                                     <FontAwesomeIcon icon={faCalendarDays} />{" "}
                                     {task.date}
@@ -46,14 +46,14 @@ const TaskPage = ({ task }) => {
                             </p>
                         )}
                         {task.project && (
-                            <p class="project">
+                            <p className="project">
                                 <FontAwesomeIcon icon={faHashtag} />
                                 {" project "}
                                 {task.project}
                             </p>
                         )}
                         {task.priority && (
-                            <p class="priority">
+                            <p className="priority">
                                 <FontAwesomeIcon icon={faFlag} />
                                 {" priority: "}
                                 {task.priority}
@@ -88,8 +88,10 @@ export async function getServerSideProps({ params }) {
 
     const task = await Task.findById(params.id).lean();
     task._id = task._id.toString();
-    if (task.date) task.date = task.date.toISOString().split("T")[0];
-    else task.date = "";
+    task.date = JSON.parse(JSON.stringify(task.date));
+    if (task.date) {
+        task.date = task.date.split("T")[0];
+    }
     return { props: { task } };
 }
 

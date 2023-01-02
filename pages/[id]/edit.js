@@ -27,13 +27,10 @@ const EditTask = () => {
             </div>
         );
     }
-
+    task.date = JSON.parse(JSON.stringify(task.date));
     if (task.date) {
         task.date = task.date.split("T")[0];
-    } else {
-        task.date = "";
     }
-
     const taskForm = {
         name: task.name,
         description: task.description,
