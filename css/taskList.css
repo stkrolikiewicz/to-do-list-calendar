@@ -18,18 +18,22 @@
 }
 
 #tasks-list {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
 }
 
 #task {
     padding: 0.6rem;
     /* padding-bottom: calc(0.6rem + 1px); */
-
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    border-bottom: 1px solid var(--main-grey);
+    margin-bottom: 0.3rem;
+    /* border-bottom: 1px solid var(--main-grey); */
     /* position: relative;
     z-index: 1; */
 }
@@ -48,7 +52,8 @@
     border-radius: 1rem;
     flex-direction: column;
     gap: 3rem;
-    background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
+    background-color: rgba(255, 255, 255, 0.3);
+    /* background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png"); */
     /* background: var(--main-grey); */
     border: 0;
     z-index: 5;
@@ -170,13 +175,14 @@
     /* --accent: grey; */
     cursor: pointer;
     background: transparent;
-    border: 1.5px solid var(--accent);
+    border: 2px solid var(--accent);
     color: var(--accent);
-    border-radius: 5px;
+    border-radius: 1rem;
     padding: 10px 15px;
     font-size: 90%;
-    font-weight: 300;
-    /* letter-spacing: 1px; */
+    font-weight: 600;
+    font-style: uppercase;
+    letter-spacing: 2px;
     transition: 0.5s all;
     outline: none;
 }
@@ -187,7 +193,7 @@
 }
 
 .edit.btn {
-    --accent: green;
+    --accent: rgb(1, 133, 1);
 }
 
 .btn::after {
@@ -198,7 +204,7 @@
 }
 
 .delete.btn {
-    --accent: #e62600;
+    --accent: #dd1010;
 }
 
 .delete::after {
@@ -206,7 +212,7 @@
 }
 
 .view.btn {
-    --accent: #009f93;
+    --accent: #193f72;
 }
 
 .view::after {
