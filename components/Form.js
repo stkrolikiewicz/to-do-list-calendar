@@ -224,20 +224,23 @@ const Form = ({ formId, taskForm, forNewTask = true, tab }) => {
                             <option value={5}>priority 5</option>
                         </select>
                     </div>
-                </div>
-                <div className="buttons">
-                    {/* <input
+                    <div className="buttons">
+                        {/* <input
                         type="button"
                         value="cancel"
                         onClick="removeTask(this)"
                         className="removeTask taskBtn"
                     /> */}
-                    <button className="removeTask btn" onClick={handleCancel}>
-                        Cancel
-                    </button>
-                    <button type="submit" className="setTask btn">
-                        Submit
-                    </button>
+                        <button
+                            className="removeTask btn"
+                            onClick={handleCancel}
+                        >
+                            Cancel
+                        </button>
+                        <button type="submit" className="setTask btn">
+                            Submit
+                        </button>
+                    </div>
                 </div>
             </form>
             <p>{message}</p>

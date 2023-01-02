@@ -5,13 +5,15 @@
 .inputs {
     border-radius: 0.7rem;
     color: black;
-    padding: 1.5rem;
+    padding: 3rem;
     width: auto;
     display: flex;
     flex-direction: column;
     border-width: 3px;
+    background-color: white;
     background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
     border: 0;
+    gap: 1rem;
     position: relative;
     z-index: 5;
 }
@@ -71,7 +73,7 @@ textarea {
     display: flex;
     width: 100%;
     justify-content: center;
-    margin: 0.3rem 0;
+    margin: 1rem 0;
     gap: 0.3rem;
 }
 
@@ -106,4 +108,18 @@ textarea {
     color: white;
     border-color: rgb(3, 12, 29);
     transition: 0.2s;
+}
+
+@media screen and (max-width: 600px) {
+    .inputs {
+        position: fixed;
+        height: fit-content;
+        width: 100%;
+        bottom: 0;
+        border-radius: 2rem 2rem 0 0;
+        z-index: 50;
+    }
+    .buttons {
+        margin-top: 1rem;
+    }
 }

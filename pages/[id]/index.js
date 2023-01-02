@@ -11,6 +11,8 @@ import {
     faCalendarDays,
     faFlag,
     faArrowLeftLong,
+    faTrash,
+    faPen,
 } from "@fortawesome/free-solid-svg-icons";
 
 /* Allows you to view task card info and delete task card*/
@@ -69,10 +71,12 @@ const TaskPage = ({ task }) => {
                     </button>
                 </Link>
                 <Link href="/[id]/edit" as={`/${task._id}/edit`} legacyBehavior>
-                    <button className="btn edit">Edit</button>
+                    <button className="btn edit">
+                        <FontAwesomeIcon icon={faPen} />
+                    </button>
                 </Link>
                 <button className="btn delete" onClick={handleDelete}>
-                    Delete
+                    <FontAwesomeIcon icon={faTrash} />
                 </button>
                 {/* <button className="btn check" onClick={handleCheck}>
                     Check Task

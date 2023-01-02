@@ -3,7 +3,7 @@
     left: 50%;
     margin-left: -59.8px;
     bottom: 5%;
-    z-index:9; 
+    z-index: 9;
 }
 
 #addTaskBtn > p {
@@ -16,14 +16,13 @@
     transition: 0.5s;
 }
 
-
 #addTaskBtn > p:hover {
     background-color: var(--dark-blue);
     transition: 0.6s;
     cursor: pointer;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
     #addTaskBtn {
         /* display: block; */
         position: fixed;
@@ -32,7 +31,6 @@
 
         left: 50%;
         margin-left: -59.8px;
-        z-index:6; 
+        z-index: 6;
     }
-    
 }
