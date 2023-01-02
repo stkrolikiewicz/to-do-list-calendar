@@ -127,6 +127,7 @@ const Form = ({ formId, taskForm, forNewTask = true, tab }) => {
             setErrors({ errs });
         }
         const button = document.getElementById("addTaskBtn");
+        resetForm();
         if (tab === "main") {
             button.style.transition = "0.5s";
             button.style.zIndex = "100";

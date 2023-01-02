@@ -44,11 +44,11 @@ const Index = ({ tasks }) => {
                                         as={`/${task._id}`}
                                         legacyBehavior
                                     >
-                                        <p class="name"> {task.name}</p>
+                                        <p className="name"> {task.name}</p>
                                     </Link>
                                 </span>
                                 {task.date && (
-                                    <p class="dueDate">
+                                    <p className="dueDate">
                                         <>
                                             <FontAwesomeIcon
                                                 icon={faCalendarDays}
@@ -58,7 +58,7 @@ const Index = ({ tasks }) => {
                                     </p>
                                 )}
                                 {task.project && (
-                                    <p class="project">
+                                    <p className="project">
                                         <FontAwesomeIcon icon={faHashtag} />
                                         {" project "}
                                         {task.project}
@@ -66,7 +66,7 @@ const Index = ({ tasks }) => {
                                 )}
                                 {task.priority && (
                                     <>
-                                        <p class="priority">
+                                        <p className="priority">
                                             <FontAwesomeIcon icon={faFlag} />{" "}
                                             {task.priority}
                                         </p>
@@ -135,13 +135,10 @@ export async function getServerSideProps() {
     const tasks = result.map((doc) => {
         const task = doc.toObject();
         task._id = task._id.toString();
-        // task.date = `${task.date}`;
-        // task.date = `${task.date}`;
-        // task.date = "2021-08-01";
-        // task.date = task.date.toISOString().split("T")[0];
-        if (task.date) task.date = task.date.toISOString().split("T")[0];
-        else task.date = "";
-
+        task.date = JSON.parse(JSON.stringify(task.date));
+        if (task.date) {
+            task.date = task.date.split("T")[0];
+        }
         return task;
     });
 
