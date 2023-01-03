@@ -7,18 +7,20 @@
 }
 
 #addTaskBtn > p {
-    background-color: rgb(3, 12, 29);
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     box-shadow: 1px 1px 2px 0px rgb(146, 146, 146);
     color: #eeeeee;
     font-size: 1.2rem;
     padding: 15px;
     border-radius: 40px;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 #addTaskBtn > p:hover {
-    background-color: var(--dark-blue);
-    transition: 0.6s;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: 0.2s;
     cursor: pointer;
 }
 

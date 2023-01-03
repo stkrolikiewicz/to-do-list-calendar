@@ -129,7 +129,7 @@ const Index = ({ tasks }) => {
                         </div>
                     ))}
                 </div>
-                <NewTask />
+                <NewTask isListEmpty={tasks.length === 0 ? "true" : "false"} />
             </section>
         </>
     );

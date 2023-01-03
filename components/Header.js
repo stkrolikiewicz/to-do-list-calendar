@@ -26,14 +26,11 @@ function Header() {
                     <FontAwesomeIcon icon={faBars} />
                 </button>
                 <ul>
-                    <li id="tasks-tab" className="nav-item">
-                        <Link href="/">
-                            <FontAwesomeIcon icon={faHouse} className="home" />
+                    <li id="tasks-tab">
+                        <Link href="/" className="nav-item">
+                            <FontAwesomeIcon icon={faHouse} />
                         </Link>
                     </li>
-                    {/* <li id="calendar-tab" className="nav-item not-active">
-                        <Link href="/">calendar</Link>
-                    </li> */}
                 </ul>
             </nav>
         </header>

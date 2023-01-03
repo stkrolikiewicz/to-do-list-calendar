@@ -27,14 +27,14 @@ body {
 main {
     display: inline-flex;
     /* flex: 0 0 auto; */
-    width: calc(100% - 0.6rem);
-    margin-inline: 0.3rem;
+    width: 100%;
+    /* margin-inline: 0.3rem; */
 }
 
 #loading {
     /* background-color: green; */
-    color: var(--dark-blue);
-    margin-top: 2rem;
+    color: black;
+    margin: auto;
     font-size: 2rem;
     display: flex;
     flex-direction: column;

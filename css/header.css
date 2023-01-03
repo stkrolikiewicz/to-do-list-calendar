@@ -3,9 +3,8 @@ header {
     top: 0.3rem;
     display: flex;
     background-color: rgba(0, 0, 0, 0.85);
-    /* background: rgb(3, 12, 29); */
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     box-shadow: 1px 1px 2px 0px rgb(146, 146, 146);
     color: var(--light);
     align-items: center;
@@ -14,93 +13,45 @@ header {
     z-index: 100;
     margin: 0.3rem;
     border-radius: 2rem;
-    /* border-bottom: 1px solid var(--dark-grey); */
 }
 
 header > nav {
-    /* background-color: var(--main-blue); */
     position: absolute;
     left: 0.5rem;
     right: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-inline: 1rem;
 }
 
 header > nav > ul {
     display: flex;
-    /* width: 100%; */
-    /* justify-content: flex-end; */
     gap: 0.2rem;
-    margin-right: 1rem;
-    /* border-bottom: 1px solid var(--light); */
+    list-style: none;
 }
 
 .nav-item {
     display: inline-flex;
+    color: var(--light);
     font-size: 1.1rem;
     padding: 0.6rem 0.8rem;
     justify-content: center;
     align-items: center;
     transition: 0.2s;
     border-radius: 2rem;
-}
-
-header li {
     background: transparent;
-    /* background-color: var(--light);
-    color: var(--dark-blue); */
-    /* border: 1px solid var(--light); */
-    /* border-bottom: 0px; */
-    /* border-bottom: 2px solid var(--light); */
 }
 
-.home:hover {
-    color: black;
-}
-header li:hover {
+.nav-item:hover {
     transition: 0.2s;
     background-color: var(--main-grey);
-    /* color: var(--dark-blue); */
-    /* background: var(--light);
-    color: black; */
-    /* border: 1px solid var(--light); */
-    /* border-bottom: 0px; */
-    /* color: var(--dark-blue); */
+    color: black;
     cursor: pointer;
-    /* border-bottom: 2px solid var(--light); */
-}
-#sidebar-icon {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: space-between;
-    width: 2rem;
-    height: 1.7rem;
-    padding: 0.4rem;
 }
 
 header button {
-    /* background: var(--dark-blue); */
     background: transparent;
-    /* color: var(--main-blue); */
-    color: var(--light);
     border: 0px solid;
-    /* border-radius: 1rem; */
-    /* border-radius: 2px; */
     transition: 0.3s;
-    margin-left: 1rem;
-}
-header button:hover {
-    background: var(--main-grey);
-    color: black;
-    border: 0px solid;
-    border-radius: 2rem;
-    padding: 0.6rem 0.8rem;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-header a {
-    text-decoration: none;
-    color: var(--light);
 }

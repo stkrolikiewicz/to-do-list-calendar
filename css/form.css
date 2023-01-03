@@ -19,16 +19,19 @@
     transform: translateY(calc(-1.5rem + 1px));
 }
 
-.inputs {
-    border-radius: 2rem;
+.inputs,
+.inputs-edit {
+    /* border-radius: 2rem; */
     color: black;
-    padding: 3rem 3rem 1rem 3rem;
+    padding: 1rem;
     width: auto;
     display: flex;
     flex-direction: column;
     border-width: 3px;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(1px);
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 1rem;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     /* background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png"); */
     border: 0;
     gap: 1rem;
@@ -36,11 +39,12 @@
     z-index: 5;
 }
 
-.inputs input,
+input,
 select {
     /* height: 1.5rem; */
-    padding: 0.4rem 0.6rem;
+    padding: 0.6rem;
     border-radius: 0.4rem;
+    /* color: #ff220c; */
     border: 1.5px solid;
     font-family: "Exo 2", sans-serif;
     font-weight: bold;
@@ -55,6 +59,7 @@ textarea:focus {
 
 input[type="text"] {
     width: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
     font-size: 1.1rem;
     font-family: "Exo 2", sans-serif;
     font-weight: bold;
@@ -66,12 +71,14 @@ input[type="text"] {
 textarea {
     font-size: 0.9rem;
     font-family: "Exo 2", sans-serif;
-    padding: 0 0.3rem;
+    background-color: rgba(255, 255, 255, 0.4);
     margin-bottom: 0.2rem;
     border: 0px;
     width: 100%;
-    resize: none;
-    background: transparent;
+    border-radius: 0.4rem;
+    padding: 0.6rem;
+    resize: vertical;
+    /* background: transparent; */
 }
 
 .other-fields {
@@ -90,10 +97,12 @@ textarea {
 }
 
 .buttons {
+    border-top: 1px solid black;
     display: flex;
     width: 100%;
     justify-content: center;
-    margin: 1rem 0;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
     gap: 0.3rem;
 }
 
@@ -141,5 +150,8 @@ textarea {
     }
     .buttons {
         margin-top: 1rem;
+    }
+    .inputs::before {
+        display: none;
     }
 }
