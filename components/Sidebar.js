@@ -1,8 +1,9 @@
 const Sidebar = () => {
     return (
-        <section id="sidebar" className="sidebar">
+        <section id="sidebar" className="sidebar isHidden">
+            <h3>Not active</h3>
             <nav>
-                <ul>
+                <ul className="categories-list">
                     <li>Today</li>
                     <li>This Week</li>
                     <li>Missed</li>

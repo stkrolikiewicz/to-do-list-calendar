@@ -1,4 +1,7 @@
 import Link from "next/link";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHouse, faBars } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
     const moveSideBar = () => {
@@ -15,19 +18,18 @@ function Header() {
     return (
         <header id="navbar">
             <nav>
-                <button id="sidebar__trigger" onClick={moveSideBar}>
-                    <div id="sidebar-icon">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
+                <button
+                    className="nav-item"
+                    id="sidebar__trigger"
+                    onClick={moveSideBar}
+                >
+                    <FontAwesomeIcon icon={faBars} />
                 </button>
                 <ul>
-                    <li id="tasks-tab" className="nav-item active">
-                        <Link href="/">to do list</Link>
-                    </li>
-                    <li id="calendar-tab" className="nav-item not-active">
-                        <Link href="/">calendar</Link>
+                    <li id="tasks-tab">
+                        <Link href="/" className="nav-item">
+                            <FontAwesomeIcon icon={faHouse} />
+                        </Link>
                     </li>
                 </ul>
             </nav>

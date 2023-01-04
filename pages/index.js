@@ -25,7 +25,7 @@ const Index = ({ tasks }) => {
         <>
             {/* Create a card for each task */}
             <section id="tasks-container">
-                {tasks.length === 0 && <AllDone sign="ALL TASKS COMPLETED!" />}
+                {/* {tasks.length === 0 && <AllDone sign="ALL TASKS COMPLETED!" />} */}
                 {loadingStatus && (
                     <div id="loading">
                         <p>Loading</p>
@@ -129,7 +129,7 @@ const Index = ({ tasks }) => {
                         </div>
                     ))}
                 </div>
-                <NewTask />
+                <NewTask isListEmpty={tasks.length === 0 ? "true" : "false"} />
             </section>
         </>
     );

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { mutate } from "swr";
 
-const Form = ({ formId, taskForm, forNewTask = true, tab }) => {
+const Form = ({ formId, taskForm, forNewTask = true, tab, empty }) => {
     const router = useRouter();
     const contentType = "application/json";
     const [errors, setErrors] = useState({});
@@ -163,7 +163,14 @@ const Form = ({ formId, taskForm, forNewTask = true, tab }) => {
                 onSubmit={handleSubmit}
                 style={{ display: `${formDisplay}` }}
             >
-                <div id="hello" className="inputs">
+                <div
+                    id="hello"
+                    className={
+                        tab === "edit" || empty === "true"
+                            ? "inputs-edit"
+                            : "inputs"
+                    }
+                >
                     <input
                         type="text"
                         name="name"
