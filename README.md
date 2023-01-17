@@ -5,4 +5,4 @@ In further steps the app will be connected with Google Calendar API in order to 
 
 Visit deployed app on:
 
-https://to-do-list-calendar-stkrolikiewicz.vercel.app/
+https://to-do-list-calendar.vercel.app/
