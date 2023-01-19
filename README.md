@@ -7,7 +7,7 @@ Visit deployed app on:
 
 https://to-do-list-calendar.vercel.app/
 
-# Technologies
+## Technologies
 * Next.js
 * React.js
 * JavaScript
