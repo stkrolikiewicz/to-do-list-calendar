@@ -6,3 +6,10 @@ In further steps the app will be connected with Google Calendar API in order to 
 Visit deployed app on:
 
 https://to-do-list-calendar.vercel.app/
+
+# Technologies
+* Next.js
+* React.js
+* JavaScript
+* MongoDB
+* CSS
