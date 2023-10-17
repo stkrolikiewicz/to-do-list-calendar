@@ -1,26 +1,25 @@
 {
-    "private": true,
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start"
-    },
-    "dependencies": {
-        "@fortawesome/fontawesome-svg-core": "^6.2.1",
-        "@fortawesome/free-solid-svg-icons": "^6.2.1",
-        "@fortawesome/react-fontawesome": "^0.2.0",
-        "babel-plugin-superjson-next": "^0.4.5",
-        "mongoose": "^6.7.5",
-        "next": "13.0.5",
-        "next-superjson": "^0.0.4",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "safe-json-stringify": "^1.2.0",
-        "safejson": "^1.0.1",
-        "superjson": "^1.12.1",
-        "swr": "^1.0.1"
-    },
-    "devDependencies": {
-        "eslint": "^8.29.0"
-    }
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "format": "prettier --write . --config ./.prettierrc"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "babel-plugin-superjson-next": "^0.4.5",
+    "mongoose": "^6.7.5",
+    "next": "^13.5.5",
+    "next-superjson": "^0.0.4",
+    "prettier": "^3.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "safe-json-stringify": "^1.2.0",
+    "safejson": "^1.0.1",
+    "superjson": "^1.12.1",
+    "swr": "^1.0.1"
+  }
 }
