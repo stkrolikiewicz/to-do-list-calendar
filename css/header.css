@@ -1,57 +1,57 @@
 header {
-    position: sticky;
-    top: 0.3rem;
-    display: flex;
-    background-color: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    box-shadow: 1px 1px 2px 0px rgb(146, 146, 146);
-    color: var(--light);
-    align-items: center;
-    font-family: "Exo 2", sans-serif;
-    height: var(--top-bar-height);
-    z-index: 100;
-    margin: 0.3rem;
-    border-radius: 2rem;
+  position: sticky;
+  top: 0.3rem;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 1px 1px 2px 0px rgb(146, 146, 146);
+  color: var(--light);
+  align-items: center;
+  font-family: 'Exo 2', sans-serif;
+  height: var(--top-bar-height);
+  z-index: 100;
+  margin: 0.3rem;
+  border-radius: 2rem;
 }
 
 header > nav {
-    position: absolute;
-    left: 0.5rem;
-    right: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-inline: 1rem;
+  position: absolute;
+  left: 0.5rem;
+  right: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-inline: 1rem;
 }
 
 header > nav > ul {
-    display: flex;
-    gap: 0.2rem;
-    list-style: none;
+  display: flex;
+  gap: 0.2rem;
+  list-style: none;
 }
 
 .nav-item {
-    display: inline-flex;
-    color: var(--light);
-    font-size: 1.1rem;
-    padding: 0.6rem 0.8rem;
-    justify-content: center;
-    align-items: center;
-    transition: 0.2s;
-    border-radius: 2rem;
-    background: transparent;
+  display: inline-flex;
+  color: var(--light);
+  font-size: 1.1rem;
+  padding: 0.6rem 0.8rem;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+  border-radius: 2rem;
+  background: transparent;
 }
 
 .nav-item:hover {
-    transition: 0.2s;
-    background-color: var(--main-grey);
-    color: black;
-    cursor: pointer;
+  transition: 0.2s;
+  background-color: var(--main-grey);
+  color: black;
+  cursor: pointer;
 }
 
 header button {
-    background: transparent;
-    border: 0px solid;
-    transition: 0.3s;
+  background: transparent;
+  border: 0px solid;
+  transition: 0.3s;
 }

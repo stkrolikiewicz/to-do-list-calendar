@@ -1,271 +1,271 @@
 :root {
-    --gradient: linear-gradient(var(--dark-blue), rgba(239, 248, 248, 0.9));
-    --gradient-deg: linear-gradient(
-        45deg,
-        var(--dark-blue),
-        rgba(255, 255, 255, 0)
-    );
+  --gradient: linear-gradient(var(--dark-blue), rgba(239, 248, 248, 0.9));
+  --gradient-deg: linear-gradient(
+    45deg,
+    var(--dark-blue),
+    rgba(255, 255, 255, 0)
+  );
 }
 #tasks-container {
-    width: 100%;
-    padding-inline: 5%;
-    flex-grow: 0;
-    overflow-y: auto;
-    scroll-behavior: smooth;
-    display: flex;
-    flex-direction: column;
-    margin-top: 0.3rem;
-    position: relative;
+  width: 100%;
+  padding-inline: 5%;
+  flex-grow: 0;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.3rem;
+  position: relative;
 }
 
 #tasks-list {
-    margin-bottom: 1.2rem;
+  margin-bottom: 1.2rem;
 }
 
 #task {
-    padding: 0.6rem;
-    /* padding-bottom: calc(0.6rem + 1px); */
-    background-color: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border-radius: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-bottom: 0.3rem;
-    /* border-bottom: 1px solid var(--main-grey); */
-    /* position: relative;
+  padding: 0.6rem;
+  /* padding-bottom: calc(0.6rem + 1px); */
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.3rem;
+  /* border-bottom: 1px solid var(--main-grey); */
+  /* position: relative;
     z-index: 1; */
 }
 
 #task > * {
-    flex-wrap: wrap;
-    flex: 0 1 auto;
+  flex-wrap: wrap;
+  flex: 0 1 auto;
 }
 
 #task-view {
-    margin: auto;
-    padding: 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    gap: 3rem;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 1rem;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    /* background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png"); */
-    /* background: var(--main-grey); */
-    border: 0;
-    z-index: 5;
+  margin: auto;
+  padding: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 3rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  /* background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png"); */
+  /* background: var(--main-grey); */
+  border: 0;
+  z-index: 5;
 }
 #task-link {
-    z-index: 0;
+  z-index: 0;
 }
 
 #task-edit {
-    margin: auto;
+  margin: auto;
 
-    z-index: 5;
+  z-index: 5;
 }
 
 .data {
-    display: inline-flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1rem;
-    margin-left: 0.3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-left: 0.3rem;
 }
 
 .data-view {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .data > * {
-    flex-wrap: wrap;
-    flex: 0 1 auto;
+  flex-wrap: wrap;
+  flex: 0 1 auto;
 }
 .data > p,
 .flags-view > p {
-    padding: 5px;
-    border-radius: 4px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    text-align: center;
-    color: white;
-    font-size: small;
+  padding: 5px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  text-align: center;
+  color: white;
+  font-size: small;
 }
 .name-check {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 .name {
-    padding: 0.5rem;
-    border-radius: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 .name:hover {
-    background: var(--main-grey);
-    cursor: pointer;
-    transition: 0.3s;
+  background: var(--main-grey);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .check-name-view {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 3rem;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 3rem;
 }
 
 .checkbox {
-    height: 17px;
-    width: 17px;
-    background: transparent;
-    border: 1px solid var(--dark-grey);
-    border-radius: 8.5px;
-    margin-right: 0.5rem;
+  height: 17px;
+  width: 17px;
+  background: transparent;
+  border: 1px solid var(--dark-grey);
+  border-radius: 8.5px;
+  margin-right: 0.5rem;
 }
 
 .name-view {
-    font-size: 1.5rem;
-    border-bottom: 1px solid;
-    padding-bottom: 5px;
+  font-size: 1.5rem;
+  border-bottom: 1px solid;
+  padding-bottom: 5px;
 }
 
 .description-view {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 .dueDate {
-    background-color: orange;
+  background-color: orange;
 }
 
 .project {
-    background-color: cornflowerblue;
+  background-color: cornflowerblue;
 }
 
 .priority {
-    background-color: rgb(223, 9, 9);
+  background-color: rgb(223, 9, 9);
 }
 
 .flags-view {
-    display: inline-flex;
-    align-items: center;
-    gap: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .btns {
-    display: inline-flex;
-    gap: 0.4rem;
-    justify-content: flex-end;
+  display: inline-flex;
+  gap: 0.4rem;
+  justify-content: flex-end;
 }
 
 .btns-view {
-    display: inline-flex;
-    gap: 0.4rem;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: inline-flex;
+  gap: 0.4rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .btn {
-    /* --accent: grey; */
-    cursor: pointer;
-    background: transparent;
-    border: 2px solid var(--accent);
-    color: var(--accent);
-    border-radius: 1rem;
-    padding: 10px 15px;
-    font-size: 90%;
-    font-weight: 600;
-    font-style: uppercase;
-    letter-spacing: 2px;
-    transition: 0.5s all;
-    outline: none;
+  /* --accent: grey; */
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  border-radius: 1rem;
+  padding: 10px 15px;
+  font-size: 90%;
+  font-weight: 600;
+  font-style: uppercase;
+  letter-spacing: 2px;
+  transition: 0.5s all;
+  outline: none;
 }
 
 .btn:hover {
-    background: var(--accent);
-    color: white;
+  background: var(--accent);
+  color: white;
 }
 
 .edit.btn {
-    --accent: rgb(1, 133, 1);
+  --accent: rgb(1, 133, 1);
 }
 
 .btn::after {
-    padding-left: 10px;
+  padding-left: 10px;
 }
 .edit::after {
-    content: "Edit";
+  content: 'Edit';
 }
 
 .delete.btn {
-    --accent: #dd1010;
+  --accent: #dd1010;
 }
 
 .delete::after {
-    content: "Delete";
+  content: 'Delete';
 }
 
 .view.btn {
-    --accent: #193f72;
+  --accent: #193f72;
 }
 
 .view::after {
-    content: "View";
+  content: 'View';
 }
 
 .check.btn {
-    --accent: gray;
+  --accent: gray;
 }
 
 .back.btn {
-    --accent: var(--dark-blue);
+  --accent: var(--dark-blue);
 }
 
-input[type="checkbox"] {
-    margin: 0;
-    color: var(--dark-grey);
-    width: 1.15em;
-    height: 1.15em;
+input[type='checkbox'] {
+  margin: 0;
+  color: var(--dark-grey);
+  width: 1.15em;
+  height: 1.15em;
 }
 
 @media screen and (max-width: 600px) {
-    .btns .btn::after {
-        padding-left: 0;
-        content: "";
-    }
+  .btns .btn::after {
+    padding-left: 0;
+    content: '';
+  }
 
-    #tasks-container {
-        padding-inline: 0;
-    }
+  #tasks-container {
+    padding-inline: 0;
+  }
 
-    #tasks-list {
-        padding-inline: 5%;
-    }
+  #tasks-list {
+    padding-inline: 5%;
+  }
 
-    #task-edit {
-        margin: 0;
+  #task-edit {
+    margin: 0;
 
-        z-index: 50;
-    }
-    #task-view {
-        margin: 0;
-        border-radius: 2rem 2rem 0 0;
-        width: 100%;
-        position: fixed;
-        bottom: 0;
-        z-index: 50;
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        background-color: rgba(255, 255, 255, 0.6);
-        box-shadow: 1px -1px 2px 0px rgb(146, 146, 146);
-    }
+    z-index: 50;
+  }
+  #task-view {
+    margin: 0;
+    border-radius: 2rem 2rem 0 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 50;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 1px -1px 2px 0px rgb(146, 146, 146);
+  }
 }

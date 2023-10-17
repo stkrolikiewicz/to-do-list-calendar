@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
+  reactStrictMode: true,
 };
 
 module.exports = nextConfig;
 
-const { withSuperjson } = require("next-superjson");
+const {withSuperjson} = require('next-superjson');
 
 module.exports = withSuperjson()({});
